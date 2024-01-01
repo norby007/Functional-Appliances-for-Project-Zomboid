@@ -1,1 +1,2 @@
 # Functional-Appliances-for-Project-Zomboid
+This version is the update from Steam on Update: Dec 29th 2023 This is where to get the files in order to add the Functional Appliances to your modpack. Please change the Mod ID for your personal pack so that it does not interfere with others also using the pack. Please be aware that if anyone has this version and the original Functional Appliances mod loading at the same time in a solo game or on a server it will cause a mismatch issue in the game.
