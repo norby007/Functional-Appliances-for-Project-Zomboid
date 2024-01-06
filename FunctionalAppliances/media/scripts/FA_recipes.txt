@@ -93,8 +93,8 @@ module FunctionalAppliances
   	recipe Craft Home Brew Keg
    	{
 		destroy FAEmptyKeg,
-		Yeast			= 1,
-		Flour			= 5,
+		Yeast;1,
+		Flour;5,
 		Water			= 20,
        		[Recipe.GetItemTypes.Sugar],
 		
@@ -126,9 +126,9 @@ module FunctionalAppliances
    	{
 		EmptyFACO2Tank,
 		Garbagebag,
-       		DuctTape		= 1,
-		BakingSoda		= 2,
-		Vinegar			= 2,
+       		DuctTape;1,
+		BakingSoda;2,
+		Vinegar;2,
 		keep TirePump,
 		keep Pot,
   		
@@ -161,7 +161,7 @@ module FunctionalAppliances
    	{
 		FAEmptySodaSyrupBox,
 		Water				= 20,
-		[Recipe.GetItemTypes.Sugar] 	= 1,
+		[Recipe.GetItemTypes.Sugar];5,
 		keep WaterPot/Pot,
 		BerryBlack/BerryBlue/BerryGeneric1/BerryGeneric2/BerryGeneric3/BerryGeneric4/BerryGeneric5/Cherry/Strewberrie/WinterBerry/BeautyBerry,
 		BerryBlack/BerryBlue/BerryGeneric1/BerryGeneric2/BerryGeneric3/BerryGeneric4/BerryGeneric5/Cherry/Strewberrie/WinterBerry/BeautyBerry,
@@ -214,8 +214,8 @@ module FunctionalAppliances
 	recipe Batter Blooming Onion
 	{
 		FABloomingOnion,
-		Flour=1,
-		BakingSoda=1,
+		Flour;2,
+		BakingSoda;1,
 		Water=1,
 		Result 			: FABatteredBloomingOnion,
 		OnGiveXP		: Recipe.OnGiveXP.Cooking3,
@@ -228,8 +228,8 @@ module FunctionalAppliances
 	recipe Batter Chicken
 	{
 		Chicken,
-		Flour=1,
-		BakingSoda=1,
+		Flour;2,
+		BakingSoda;1,
 		Water=1,
 		Result 			: FABatteredChicken,
 		OnGiveXP		: Recipe.OnGiveXP.Cooking3,
@@ -254,8 +254,8 @@ module FunctionalAppliances
 	recipe Batter Chicken Fillet
 	{
 		FAChickenFillet,
-		Flour=1,
-		BakingSoda=1,
+		Flour;2,
+		BakingSoda;1,
 		Water=1,
 		Result 			: FABatteredChickenFillet,
 		OnGiveXP		: Recipe.OnGiveXP.Cooking3,
@@ -268,8 +268,8 @@ module FunctionalAppliances
 	recipe Batter Cheese Sticks
 	{
 		[Recipe.GetItemTypes.Cheese];5,
-		Flour=1,
-		BakingSoda=1,
+		Flour;2,
+		BakingSoda;1,
 		Water=1,
 		Result 			: FABatteredCheese,
 		OnGiveXP		: Recipe.OnGiveXP.Cooking3,
@@ -278,6 +278,90 @@ module FunctionalAppliances
 		Time 			: 70,
 		CanBeDoneFromFloor      : true,
 		noBrokenItems		: true,
+	}
+	recipe Fry Battered Cheese Sticks
+	{
+		keep KitchenTongs/Fork/Chopsticks,
+		keep Saucepan,
+		OilVegetable;1,
+		FABatteredCheese,
+		NearItem		: Campfire,
+		CanBeDoneFromFloor 	: true,
+		Result 			: FAFriedCheeseSticks,
+		Time 			: 250,
+		Category 		: Cooking,
+		SkillRequired		: Cooking=1,
+		OnGiveXP 		: Recipe.OnGiveXP.Cooking10,
+	}
+	recipe Fry Battered Chicken Fillet
+	{
+		keep KitchenTongs/Fork/Chopsticks,
+		keep Saucepan,
+		OilVegetable;1,
+		FABatteredChickenFillet,
+		NearItem		: Campfire,
+		CanBeDoneFromFloor 	: true,
+		Result 			: FAFriedChickenFillet,
+		Time 			: 250,
+		Category 		: Cooking,
+		SkillRequired		: Cooking=1,
+		OnGiveXP 		: Recipe.OnGiveXP.Cooking10,
+	}
+	recipe Fry Battered Chicken
+	{
+		keep KitchenTongs/Fork/Chopsticks,
+		keep Saucepan,
+		OilVegetable;1,
+		FABatteredChicken,
+		NearItem		: Campfire,
+		CanBeDoneFromFloor 	: true,
+		Result 			: Base.ChickenFried,
+		Time 			: 250,
+		Category 		: Cooking,
+		SkillRequired		: Cooking=1,
+		OnGiveXP 		: Recipe.OnGiveXP.Cooking10,
+	}
+	recipe Fry Battered Blooming Onion
+	{
+		keep KitchenTongs/Fork/Chopsticks,
+		keep Saucepan,
+		OilVegetable;1,
+		FABatteredBloomingOnion,
+		NearItem		: Campfire,
+		CanBeDoneFromFloor 	: true,
+		Result 			: FAFriedBloomingOnion,
+		Time 			: 250,
+		Category 		: Cooking,
+		SkillRequired		: Cooking=1,
+		OnGiveXP 		: Recipe.OnGiveXP.Cooking10,
+	}
+	recipe FluffnTough's Pan Fried Potato Skins
+	{
+		keep KitchenTongs/Fork/Chopsticks,
+		keep Pan,
+		OilVegetable;1,
+		FAPotatoSkins,
+		NearItem		: Campfire,
+		CanBeDoneFromFloor 	: true,
+		Result 			: FAFriedPotatoSkins,
+		Time 			: 250,
+		Category 		: Cooking,
+		SkillRequired		: Cooking=1,
+		OnGiveXP 		: Recipe.OnGiveXP.Cooking10,
+	}
+	recipe FluffnTough's Pan Fried Potato Wedges
+	{
+		keep KitchenTongs/Fork/Chopsticks,
+		keep Pan,
+		OilVegetable;1,
+		FAPotatoWedges,
+		NearItem		: Campfire,
+		CanBeDoneFromFloor 	: true,
+		Result 			: Base.Fries,
+		Time 			: 250,
+		Category 		: Cooking,
+		SkillRequired		: Cooking=1,
+		OnGiveXP 		: Recipe.OnGiveXP.Cooking10,
 	}
 }
 	

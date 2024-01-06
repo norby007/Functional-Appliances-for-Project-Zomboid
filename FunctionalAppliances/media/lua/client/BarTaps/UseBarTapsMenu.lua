@@ -2,7 +2,6 @@ UseBarTapsMenu = {};
 UseBarTapsMenu.doBuildMenu = function(player, context, worldobjects)
 
 	local BarTapsObject = nil
-	local tapCounter = nil
 	local foundKeg1 = nil
 	local foundKeg2 = nil
 	local foundKeg3 = nil
@@ -11,9 +10,10 @@ UseBarTapsMenu.doBuildMenu = function(player, context, worldobjects)
 	local kegName2 = nil
 	local kegName3 = nil
 	local kegName4 = nil
+	local square = nil
 
 	for _,object in ipairs(worldobjects) do
-		local square = object:getSquare()
+		square = object:getSquare()
 
 		if not square then
 			return
@@ -48,67 +48,47 @@ UseBarTapsMenu.doBuildMenu = function(player, context, worldobjects)
 		return 
 	end
 
-	for _,object in ipairs(worldobjects) do
-		local square = object:getSquare()
-		if not square then
-			return
-		end
+	square = BarTapsObject:getSquare()
+
+	for index=1,square:getObjects():size() do
+		local thisObject = square:getObjects():get(index-1)
+		local containerItems = nil
 		
-		for i=1,square:getObjects():size() do
-			local thisObject = square:getObjects():get(i-1)
-		
-			if thisObject:getSprite() then
-				local properties = thisObject:getSprite():getProperties()
-				if properties == nil then
-					return
-				end
-			
-				local customName = nil
-	
-				if properties:Is("CustomName") then
-					customName = properties:Val("CustomName")
-				end
-				
-				if customName == "Counter" then	
-					tapCounter = thisObject
-					break
-				end
-			end 
-		end
-	end
-
-	if not tapCounter then 
-		return 
-	end
-
-	tapCounter:getContainer():requestSync()
-
-	local counterItems = tapCounter:getItemContainer():getItems()
-
-	for i=0, counterItems:size()-1 do
-        	local item = counterItems:get(i)
-		local itemDisplayName = nil
-
-		if item and item:getDisplayName() then
-			itemDisplayName = item:getDisplayName()
+		if thisObject:getContainer() then
+			containerItems = thisObject:getItemContainer():getItems()
 		end
 
-		if (itemDisplayName == "Keg of Bub Beer" or itemDisplayName == "Keg of Bub Lite Beer" or itemDisplayName == "Keg of Swiller Beer" or itemDisplayName == "Keg of Swiller Lite Beer" or itemDisplayName == "Keg of Home Brew Beer" or itemDisplayName == "Empty Keg") or
-			(itemDisplayName == "Keg of Beer [American Lager]" or itemDisplayName == "Keg of Beer [Dark American Pale Ale]" or itemDisplayName == "Keg of Beer [Light American Pale Ale]" or itemDisplayName == "Keg of Beer [Light India Pale Ale]" or itemDisplayName == "Keg of Beer [Dark India Pale Ale]") or
-			(itemDisplayName == "Keg of Beer [Light Lager]" or itemDisplayName == "Keg of Beer [Pilsner]" or itemDisplayName == "Keg of Beer [Porter]" or itemDisplayName == "Keg of Beer [Stout]" or itemDisplayName == "Keg of Beer [Skunked]") then
-			if not foundKeg1 then
-				foundKeg1 = item
-				kegName1 = itemDisplayName
-			elseif not foundKeg2 then
-				foundKeg2 = item
-				kegName2 = itemDisplayName
-			elseif not foundKeg3 then
-				foundKeg3 = item
-				kegName3 = itemDisplayName
-			elseif not foundKeg4 then
-				foundKeg4 = item
-				kegName4 = itemDisplayName
+		if containerItems ~= nil then
+			for i=0, containerItems:size()-1 do
+        			local item = containerItems:get(i)
+				local itemDisplayName = nil
+
+				if item and item:getDisplayName() then
+					itemDisplayName = item:getDisplayName()
+				end
+
+				if (itemDisplayName == "Keg of Bub Beer" or itemDisplayName == "Keg of Bub Lite Beer" or itemDisplayName == "Keg of Swiller Beer" or itemDisplayName == "Keg of Swiller Lite Beer" or itemDisplayName == "Keg of Home Brew Beer") or
+					(itemDisplayName == "Keg of Beer [American Lager]" or itemDisplayName == "Keg of Beer [Dark American Pale Ale]" or itemDisplayName == "Keg of Beer [Light American Pale Ale]" or itemDisplayName == "Keg of Beer [Light India Pale Ale]" or itemDisplayName == "Keg of Beer [Dark India Pale Ale]") or
+					(itemDisplayName == "Keg of Beer [Light Lager]" or itemDisplayName == "Keg of Beer [Pilsner]" or itemDisplayName == "Keg of Beer [Porter]" or itemDisplayName == "Keg of Beer [Stout]" or itemDisplayName == "Keg of Beer [Skunked]") then
+					if not foundKeg1 then
+						foundKeg1 = item
+						kegName1 = itemDisplayName
+					elseif not foundKeg2 then
+						foundKeg2 = item
+						kegName2 = itemDisplayName
+					elseif not foundKeg3 then
+						foundKeg3 = item
+						kegName3 = itemDisplayName
+					elseif not foundKeg4 then
+						foundKeg4 = item
+						kegName4 = itemDisplayName
+						break
+					end
+				end
 			end
+		end
+		if foundKeg4 then
+			break
 		end
 	end
 

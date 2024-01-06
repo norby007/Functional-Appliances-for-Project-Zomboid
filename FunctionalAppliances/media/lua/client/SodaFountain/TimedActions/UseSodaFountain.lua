@@ -87,7 +87,6 @@ local function exchangeBottle(flavor, syrup)
 			end
 		end
 	end
-
 end
 
 function UseSodaFountain:waitToStart()
@@ -188,18 +187,26 @@ function UseSodaFountain:perform()
 		self.tank:Use()
 	end
 
-	if self.flavor == "RefillSodaBottle" then
+	if self.flavor == "RefillSodaBottle" and self.machine:getWaterAmount() > 3 then
 		local newWaterAmount = self.machine:getWaterAmount() - 4
 		if newWaterAmount < 0 then
 			newWaterAmount = 0
 		end
 		self.machine:setWaterAmount(newWaterAmount)
-	else
+	elseif self.flavor == "RefillSodaBottle" then
+		self.jug:Use()
+		self.jug:Use()
+		self.jug:Use()
+		self.jug:Use()
+	elseif self.machine:getWaterAmount() > 1 then
 		local newWaterAmount = self.machine:getWaterAmount() - 2
 		if newWaterAmount < 0 then
 			newWaterAmount = 0
 		end
 		self.machine:setWaterAmount(newWaterAmount)
+	else
+		self.jug:Use()
+		self.jug:Use()
 	end
 
 	self.tank:getContainer():requestSync()
@@ -209,7 +216,7 @@ function UseSodaFountain:perform()
 	ISBaseTimedAction.perform(self);
 end
 
-function UseSodaFountain:new(character, machine, sound, flavor, syrup, tank)
+function UseSodaFountain:new(character, machine, sound, flavor, syrup, tank, jug)
 	local o = {}
 	setmetatable(o, self)
 	self.__index = self
@@ -219,6 +226,7 @@ function UseSodaFountain:new(character, machine, sound, flavor, syrup, tank)
 	o.flavor = flavor
 	o.syrup = syrup
 	o.tank = tank
+	o.jug = jug
 	o.stopOnWalk = true;
 	o.stopOnRun = true;
 	o.gameSound = 0

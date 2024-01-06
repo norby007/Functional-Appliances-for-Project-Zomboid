@@ -10,9 +10,11 @@ UseSodaFountainMenu.doBuildMenu = function(player, context, worldobjects)
 	local foundSyrup2 = nil
 	local foundSyrup3 = nil
 	local foundSyrup4 = nil
+	local foundWaterJug = nil
+	local square = nil
 
 	for _,object in ipairs(worldobjects) do
-		local square = object:getSquare()
+		square = object:getSquare()
 
 		if not square then
 			return
@@ -76,67 +78,115 @@ UseSodaFountainMenu.doBuildMenu = function(player, context, worldobjects)
 		return 
 	end
 
-	for _,object in ipairs(worldobjects) do
-		local square = object:getSquare()
-		if not square then
-			return
+	square = SodaFountainObject:getSquare()
+
+	for index=1,square:getObjects():size() do
+		local thisObject = square:getObjects():get(index-1)
+		local containerItems = nil
+		
+		if thisObject:getContainer() then
+			containerItems = thisObject:getItemContainer():getItems()
 		end
-		
-		for i=1,square:getObjects():size() do
-			local thisObject = square:getObjects():get(i-1)
-		
-			if thisObject:getSprite() then
-				local properties = thisObject:getSprite():getProperties()
-				if properties == nil then
-					return
+
+		if containerItems ~= nil then
+			for i=0, containerItems:size()-1 do
+        			local item = containerItems:get(i)
+				local itemDisplayName = nil
+
+				if item and item:getDisplayName() then
+					itemDisplayName = item:getDisplayName()
 				end
-			
-				local customName = nil
-	
-				if properties:Is("CustomName") then
-					customName = properties:Val("CustomName")
+
+				if itemDisplayName == "Water Jug with Water" and not foundWaterJug and item:getRemainingUses() > 0 then
+					foundWaterJug = item
+				end
+
+				if itemDisplayName == "CO2 Tank" or itemDisplayName == "DIY CO2 Tank" and not foundCO2 then
+					foundCO2 = item
+				end
+
+				if (itemDisplayName == "Box of Orange Soda Syrup" or itemDisplayName == "Box of Lemon Lime Soda Syrup" or itemDisplayName == "Box of Root Beer Soda Syrup" or itemDisplayName == "Box of KY Cola Soda Syrup" or itemDisplayName == "Box of Soda Syrup" or itemDisplayName == "Empty Box of Soda Syrup" or itemDisplayName == "Box of Berry Flavored Soda Syrup") then
+					if not foundSyrup1 then
+						foundSyrup1 = item
+					elseif not foundSyrup2 then
+						foundSyrup2 = item
+					elseif not foundSyrup3 then
+						foundSyrup3 = item
+					elseif not foundSyrup4 then
+						foundSyrup4 = item	
+					end
 				end
 				
-				if customName == "Counter" or customName == "Square Theater Counter" or customName == "Soda Machine" then	
-					fountainCounter = thisObject
+				if foundCO2 and foundSyrup4 and foundWaterJug then
 					break
 				end
-			end 
+			end
+		end
+		if foundCO2 and foundSyrup4 and foundWaterJug then
+			break
 		end
 	end
 
-	if not fountainCounter then 
-		return 
+	local rearSquare = nil
+
+	if SodaFountainObject:getSprite():getProperties():Is("Facing") then
+		local facing = SodaFountainObject:getSprite():getProperties():Val("Facing")
+		if facing == "S" then
+			rearSquare = getSquare(square:getX(), square:getY()-1, square:getZ())
+		elseif facing == "E" then
+			rearSquare = getSquare(square:getX()-1, square:getY(), square:getZ())
+		elseif facing == "W" then
+			rearSquare = getSquare(square:getX()+1, square:getY(), square:getZ())
+		elseif facing == "N" then
+			rearSquare = getSquare(square:getX(), square:getY()+1, square:getZ())
+		end
 	end
 
-	if fountainCounter:getContainer() then
-		counterItems = fountainCounter:getItemContainer():getItems()
-		fountainCounter:getContainer():requestSync()
-	else
-		return
-	end
+	if (not foundCO2 or not foundSyrup4) and rearSquare then
+		for index=1,rearSquare:getObjects():size() do
+			local thisObject = rearSquare:getObjects():get(index-1)
+			local containerItems = nil
+		
+			if thisObject:getContainer() then
+				containerItems = thisObject:getItemContainer():getItems()
+			end
 
-	for i=0, counterItems:size()-1 do
-        	local item = counterItems:get(i)
-		local itemDisplayName = nil
+			if containerItems ~= nil then
+				for i=0, containerItems:size()-1 do
+        				local item = containerItems:get(i)
+					local itemDisplayName = nil
 
-		if item and item:getDisplayName() then
-			itemDisplayName = item:getDisplayName()
-		end
+					if item and item:getDisplayName() then
+						itemDisplayName = item:getDisplayName()
+					end
 
-		if itemDisplayName == "CO2 Tank" or itemDisplayName == "DIY CO2 Tank" then
-			foundCO2 = item
-		end
+					if itemDisplayName == "Water Jug with Water" and not foundWaterJug and item:getRemainingUses() > 0 then
+						foundWaterJug = item
+					end
 
-		if (itemDisplayName == "Box of Orange Soda Syrup" or itemDisplayName == "Box of Lemon Lime Soda Syrup" or itemDisplayName == "Box of Root Beer Soda Syrup" or itemDisplayName == "Box of KY Cola Soda Syrup" or itemDisplayName == "Box of Soda Syrup" or itemDisplayName == "Empty Box of Soda Syrup" or itemDisplayName == "Box of Berry Flavored Soda Syrup") then
-			if not foundSyrup1 then
-				foundSyrup1 = item
-			elseif not foundSyrup2 then
-				foundSyrup2 = item
-			elseif not foundSyrup3 then
-				foundSyrup3 = item
-			elseif not foundSyrup4 then
-				foundSyrup4 = item		
+					if itemDisplayName == "CO2 Tank" or itemDisplayName == "DIY CO2 Tank" and not foundCO2 then
+						foundCO2 = item
+					end
+
+					if (itemDisplayName == "Box of Orange Soda Syrup" or itemDisplayName == "Box of Lemon Lime Soda Syrup" or itemDisplayName == "Box of Root Beer Soda Syrup" or itemDisplayName == "Box of KY Cola Soda Syrup" or itemDisplayName == "Box of Soda Syrup" or itemDisplayName == "Empty Box of Soda Syrup" or itemDisplayName == "Box of Berry Flavored Soda Syrup") then
+						if not foundSyrup1 then
+							foundSyrup1 = item
+						elseif not foundSyrup2 then
+							foundSyrup2 = item
+						elseif not foundSyrup3 then
+							foundSyrup3 = item
+						elseif not foundSyrup4 then
+							foundSyrup4 = item	
+						end
+					end
+					
+					if foundCO2 and foundSyrup4 and foundWaterJug then
+						break
+					end
+				end
+			end
+			if foundCO2 and foundSyrup4 and foundWaterJug then
+				break
 			end
 		end
 	end
@@ -240,7 +290,7 @@ UseSodaFountainMenu.doBuildMenu = function(player, context, worldobjects)
 				  UseSodaFountainMenu.onUseSodaFountain,
 				  getSpecificPlayer(player),
 				  SodaFountainObject,
-				  soundFile, "Soda", foundSyrup1, foundCO2)
+				  soundFile, "Soda", foundSyrup1, foundCO2, foundWaterJug)
 	end
 	if foundSyrup2 then
 		subContext:addOption(syrupName2,
@@ -248,7 +298,7 @@ UseSodaFountainMenu.doBuildMenu = function(player, context, worldobjects)
 				  UseSodaFountainMenu.onUseSodaFountain,
 				  getSpecificPlayer(player),
 				  SodaFountainObject,
-				  soundFile, "Soda", foundSyrup2, foundCO2)
+				  soundFile, "Soda", foundSyrup2, foundCO2, foundWaterJug)
 	end
 	if foundSyrup3 then
 		subContext:addOption(syrupName3,
@@ -256,7 +306,7 @@ UseSodaFountainMenu.doBuildMenu = function(player, context, worldobjects)
 				  UseSodaFountainMenu.onUseSodaFountain,
 				  getSpecificPlayer(player),
 				  SodaFountainObject,
-				  soundFile, "Soda", foundSyrup3, foundCO2)
+				  soundFile, "Soda", foundSyrup3, foundCO2, foundWaterJug)
 	end
 	if foundSyrup4 then
 		subContext:addOption(syrupName4,
@@ -264,7 +314,7 @@ UseSodaFountainMenu.doBuildMenu = function(player, context, worldobjects)
 				  UseSodaFountainMenu.onUseSodaFountain,
 				  getSpecificPlayer(player),
 				  SodaFountainObject,
-				  soundFile, "Soda", foundSyrup4, foundCO2)
+				  soundFile, "Soda", foundSyrup4, foundCO2, foundWaterJug)
 	end
 
 	local contextMenu2 = nil
@@ -281,7 +331,7 @@ UseSodaFountainMenu.doBuildMenu = function(player, context, worldobjects)
 				  UseSodaFountainMenu.onUseSodaFountain,
 				  getSpecificPlayer(player),
 				  SodaFountainObject,
-				  soundFile, "RefillSodaBottle", foundSyrup1, foundCO2)
+				  soundFile, "RefillSodaBottle", foundSyrup1, foundCO2, foundWaterJug)
 	end
 	if foundSyrup2 then
 		subContext2:addOption(syrupName2,
@@ -289,7 +339,7 @@ UseSodaFountainMenu.doBuildMenu = function(player, context, worldobjects)
 				  UseSodaFountainMenu.onUseSodaFountain,
 				  getSpecificPlayer(player),
 				  SodaFountainObject,
-				  soundFile, "RefillSodaBottle", foundSyrup2, foundCO2)
+				  soundFile, "RefillSodaBottle", foundSyrup2, foundCO2, foundWaterJug)
 	end
 	if foundSyrup3 then
 		subContext2:addOption(syrupName3,
@@ -297,7 +347,7 @@ UseSodaFountainMenu.doBuildMenu = function(player, context, worldobjects)
 				  UseSodaFountainMenu.onUseSodaFountain,
 				  getSpecificPlayer(player),
 				  SodaFountainObject,
-				  soundFile, "RefillSodaBottle", foundSyrup3, foundCO2)
+				  soundFile, "RefillSodaBottle", foundSyrup3, foundCO2, foundWaterJug)
 	end
 	if foundSyrup4 then
 		subContext2:addOption(syrupName4,
@@ -305,7 +355,7 @@ UseSodaFountainMenu.doBuildMenu = function(player, context, worldobjects)
 				  UseSodaFountainMenu.onUseSodaFountain,
 				  getSpecificPlayer(player),
 				  SodaFountainObject,
-				  soundFile, "RefillSodaBottle", foundSyrup4, foundCO2)
+				  soundFile, "RefillSodaBottle", foundSyrup4, foundCO2, foundWaterJug)
 	end
 end
 
@@ -383,7 +433,7 @@ UseSodaFountainMenu.walkToFront = function(thisPlayer, SodaFountainObject)
 	return false
 end
 
-UseSodaFountainMenu.onUseSodaFountain = function(worldobjects, player, machine, soundFile, flavorChoice, foundSyrup, foundCO2)
+UseSodaFountainMenu.onUseSodaFountain = function(worldobjects, player, machine, soundFile, flavorChoice, foundSyrup, foundCO2, foundWaterJug)
 	if not UseSodaFountainMenu.walkToFront(player, machine) then
 		return
 	end
@@ -408,32 +458,39 @@ UseSodaFountainMenu.onUseSodaFountain = function(worldobjects, player, machine, 
 		changeCO2Amount = 2
 	end
 
+	local waterJugAmount = 0
+
+	if foundWaterJug ~= nil then
+		waterJugAmount = foundWaterJug:getRemainingUses()
+	end
+
 	if not ((SandboxVars.AllowExteriorGenerator and square:haveElectricity()) or (SandboxVars.ElecShutModifier > -1 and GameTime:getInstance():getNightsSurvived() < SandboxVars.ElecShutModifier and square:isOutside() == false)) then
 		player:Say("I will need a generator nearby to power it.")
 		return
 	end
 
-	--if not (SandboxVars.WaterShutModifier > -1 and GameTime:getInstance():getNightsSurvived() < SandboxVars.WaterShutModifier and square:isOutside() == false) and (machine:getSprite():getProperties():Is(IsoFlagType.waterPiped) == false or machine:getWaterAmount() < changeWaterAmount) then
-	--	player:Say("This machine needs more water.")
-	--	return
-	--end
-
-	if machine:getWaterAmount() < changeWaterAmount then
-		player:Say("This machine needs more water.")
-		return
-	elseif not machine:getSprite():getProperties():Is(IsoFlagType.waterPiped) then
-		player:Say("This machine needs to be plumbed first.")
+	if square:isOutside() then
+		player:Say("This machine must be inside.")
 		return
 	end
-	--elseif not (SandboxVars.WaterShutModifier > -1 and GameTime:getInstance():getNightsSurvived() < SandboxVars.WaterShutModifier and square:isOutside() == false) then
-	--	player:Say("This machine needs more water.")
-	--	return
-	--end
+
+	if not (SandboxVars.WaterShutModifier > -1 and GameTime:getInstance():getNightsSurvived() < SandboxVars.WaterShutModifier) then
+		if machine:getWaterAmount() < changeWaterAmount and waterJugAmount == 0 then
+			player:Say("This machine needs more water.")
+			return
+		elseif not machine:getSprite():getProperties():Is(IsoFlagType.waterPiped) and waterJugAmount == 0 then
+			player:Say("This machine needs plumbing.")
+			return
+		elseif foundWaterJug ~= nil and waterJugAmount < changeWaterAmount then
+			player:Say("This machine needs more water in the jug.")
+			return
+		end
+	end
 
 	if flavorChoice == "Soda" and (vanillaFountainCup or FAFountainCup) then
-		ISTimedActionQueue.add(UseSodaFountain:new(player, machine, soundFile, flavorChoice, foundSyrup, foundCO2, squareToTurn))
+		ISTimedActionQueue.add(UseSodaFountain:new(player, machine, soundFile, flavorChoice, foundSyrup, foundCO2, foundWaterJug, squareToTurn))
 	elseif flavorChoice == "RefillSodaBottle" and (emptyPopBottle or emptyWaterBottle) then
-		ISTimedActionQueue.add(UseSodaFountain:new(player, machine, soundFile, flavorChoice, foundSyrup, foundCO2, squareToTurn))
+		ISTimedActionQueue.add(UseSodaFountain:new(player, machine, soundFile, flavorChoice, foundSyrup, foundCO2, foundWaterJug, squareToTurn))
 	elseif flavorChoice == "RefillSodaBottle" then
 		player:Say("I'll need an empty water or soda bottle to fill.")
 	elseif flavorChoice == "Soda" then

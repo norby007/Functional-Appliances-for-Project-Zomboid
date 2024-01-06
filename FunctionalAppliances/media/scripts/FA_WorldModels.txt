@@ -151,7 +151,7 @@ module Base
 		texture = WorldItems/FASodaSyrupBox,
 		scale = 1.5,
 	}
-	model CO2Tank
+	model FACO2Tank
 	{
 		mesh = WorldItems/FACO2Tank,
 		texture = WorldItems/FACO2Tank,
