@@ -12,7 +12,7 @@ Sandbox_RU = {
 	Sandbox_FunctionalAppliances_BeerKegsChance_option6 = "Никогда",
 
 	Sandbox_FunctionalAppliances_BeerKegsFilledAmount = "Насколько полные появляющиеся пивные кеги",
-	Sandbox_FunctionalAppliances_BeerKegsFilledAmount_tooltip = "Насколько полны пивные кеги, которые появятся.",
+	Sandbox_FunctionalAppliances_BeerKegsFilledAmount_tooltip = "Насколько полны пивные кеги при появлении.",
 	Sandbox_FunctionalAppliances_BeerKegsFilledAmount_option1 = "Чрезвычайно мало",
 	Sandbox_FunctionalAppliances_BeerKegsFilledAmount_option2 = "Мало",
 	Sandbox_FunctionalAppliances_BeerKegsFilledAmount_option3 = "Нормально",
@@ -20,8 +20,8 @@ Sandbox_RU = {
 	Sandbox_FunctionalAppliances_BeerKegsFilledAmount_option5 = "Полные",
 	Sandbox_FunctionalAppliances_BeerKegsFilledAmount_option6 = "Случайно",
 
-	Sandbox_FunctionalAppliances_SyrupsChance = "Шанс появления постмикс аппарата и резервуара с СО2",
-	Sandbox_FunctionalAppliances_SyrupsChance_tooltip = "Как часто можно найти постмикс аппарат и резервуары с СО2.",
+	Sandbox_FunctionalAppliances_SyrupsChance = "Шанс появления коробок с сиропом и резервуара с СО2",
+	Sandbox_FunctionalAppliances_SyrupsChance_tooltip = "Как часто можно найти коробоки с сиропом для автомата газировки и резервуары с СО2.",
 	Sandbox_FunctionalAppliances_SyrupsChance_option1 = "Изредка",
 	Sandbox_FunctionalAppliances_SyrupsChance_option2 = "Редко",
 	Sandbox_FunctionalAppliances_SyrupsChance_option3 = "Нормально",
@@ -29,8 +29,8 @@ Sandbox_RU = {
 	Sandbox_FunctionalAppliances_SyrupsChance_option5 = "Очень часто",
 	Sandbox_FunctionalAppliances_SyrupsChance_option6 = "Никогда",
 
-	Sandbox_FunctionalAppliances_SyrupsFilledAmount = "Насколько полные появляются постмикс аппараты и резервуары с СО2",
-	Sandbox_FunctionalAppliances_SyrupsFilledAmount_tooltip = "Насколько полны постмикс аппараты и резервуары с СО2, которые появятся.",
+	Sandbox_FunctionalAppliances_SyrupsFilledAmount = "Насколько полные коробки с сиропом для автомата газировки и резервуары с СО2",
+	Sandbox_FunctionalAppliances_SyrupsFilledAmount_tooltip = "Насколько полны коробки с сиропом для автомата газировки и резервуары с СО2 при появлении.",
 	Sandbox_FunctionalAppliances_SyrupsFilledAmount_option1 = "Чрезвычайно мало",
 	Sandbox_FunctionalAppliances_SyrupsFilledAmount_option2 = "Мало",
 	Sandbox_FunctionalAppliances_SyrupsFilledAmount_option3 = "Нормально",
@@ -56,8 +56,8 @@ Sandbox_RU = {
 	Sandbox_FunctionalAppliances_FAFreshTheatreChance_option5 = "Очень часто",
 	Sandbox_FunctionalAppliances_FAFreshTheatreChance_option6 = "Никогда",
 
-	Sandbox_FunctionalAppliances_FADeepFryerOil = "Шанс появления фритюрницы с чашей",
-	Sandbox_FunctionalAppliances_FADeepFryerOil_tooltip = "Как часто можно найти фритюрницу с маслом в чаше.",
+	Sandbox_FunctionalAppliances_FADeepFryerOil = "Шанс появления масла в фритюрнице",
+	Sandbox_FunctionalAppliances_FADeepFryerOil_tooltip = "Как часто можно найти масло в чаше индустриальной фритюрницы.",
 	Sandbox_FunctionalAppliances_FADeepFryerOil_option1 = "Изредка",
 	Sandbox_FunctionalAppliances_FADeepFryerOil_option2 = "Редко",
 	Sandbox_FunctionalAppliances_FADeepFryerOil_option3 = "Нормально",
@@ -65,14 +65,14 @@ Sandbox_RU = {
 	Sandbox_FunctionalAppliances_FADeepFryerOil_option5 = "Очень часто",
 	Sandbox_FunctionalAppliances_FADeepFryerOil_option6 = "Никогда",
 
-	Sandbox_FunctionalAppliances_FAZombieItemsSpawn = "Разрешить появляться предметам функциональных приборов на зомби",
+	Sandbox_FunctionalAppliances_FAZombieItemsSpawn = "Разрешить появляться предметам функциональных приборов при обыске зомби",
 	Sandbox_FunctionalAppliances_FAZombieItemsSpawn_tooltip = "Отключение этого параметра уберет возможность появляться предметам функциональных приборов на зомби.",
 
-	Sandbox_FunctionalAppliances_FAPayPhonesAttractZombies = "Разрешить телефону-автомату привлекать зомби",
-	Sandbox_FunctionalAppliances_FAPayPhonesAttractZombies_tooltip = "Отключение этого параметра уберет возможность привлечение зомби звоном телефона-автомата.",
+	Sandbox_FunctionalAppliances_FAPayPhonesAttractZombies = "Разрешить таксофону привлекать зомби",
+	Sandbox_FunctionalAppliances_FAPayPhonesAttractZombies_tooltip = "Отключение этого параметра уберет возможность привлечение зомби звоном таксофона.",
 
-	Sandbox_FunctionalAppliances_FASapphsCookingTheatreChance = "Шанс появления непортящийся еды из мода Sapph's Cooking в кинотеатре",
-	Sandbox_FunctionalAppliances_FASapphsCookingTheatreChance_tooltip = "Как часто можно найти непортящиеся продукты из мода Sapph's Cooking на прилавках кинотеатра.",
+	Sandbox_FunctionalAppliances_FASapphsCookingTheatreChance = "Шанс появления непортящийся еды из мода «Sapph's Cooking» в кинотеатре",
+	Sandbox_FunctionalAppliances_FASapphsCookingTheatreChance_tooltip = "Как часто можно найти непортящиеся продукты из мода «Sapph's Cooking» на прилавках кинотеатра.",
 	Sandbox_FunctionalAppliances_FASapphsCookingTheatreChance_option1 = "Изредка",
 	Sandbox_FunctionalAppliances_FASapphsCookingTheatreChance_option2 = "Редко",
 	Sandbox_FunctionalAppliances_FASapphsCookingTheatreChance_option3 = "Нормально",
@@ -80,8 +80,8 @@ Sandbox_RU = {
 	Sandbox_FunctionalAppliances_FASapphsCookingTheatreChance_option5 = "Очень часто",
 	Sandbox_FunctionalAppliances_FASapphsCookingTheatreChance_option6 = "Никогда",
 
-	Sandbox_FunctionalAppliances_FASapphsCookingFreshTheatreChance = "Шанс появления свежей еды из мода Sapph's Cooking в кинотеатре",
-	Sandbox_FunctionalAppliances_FASapphsCookingFreshTheatreChance_tooltip = "Как часто можно найти свежие продукты из мода Sapph's Cooking на прилавках кинотеатра.",
+	Sandbox_FunctionalAppliances_FASapphsCookingFreshTheatreChance = "Шанс появления свежей еды из мода «Sapph's Cooking» в кинотеатре",
+	Sandbox_FunctionalAppliances_FASapphsCookingFreshTheatreChance_tooltip = "Как часто можно найти свежие продукты из мода «Sapph's Cooking» на прилавках кинотеатра.",
 	Sandbox_FunctionalAppliances_FASapphsCookingFreshTheatreChance_option1 = "Изредка",
 	Sandbox_FunctionalAppliances_FASapphsCookingFreshTheatreChance_option2 = "Редко,
 	Sandbox_FunctionalAppliances_FASapphsCookingFreshTheatreChance_option3 = "Нормально",
@@ -89,8 +89,8 @@ Sandbox_RU = {
 	Sandbox_FunctionalAppliances_FASapphsCookingFreshTheatreChance_option5 = "Очень часто",
 	Sandbox_FunctionalAppliances_FASapphsCookingFreshTheatreChance_option6 = "Никогда",
 
-	Sandbox_FunctionalAppliances_FACCSTheatreChance = "Шанс появления конфет из мода Corner Store Candies and Sodas в кинотеатре",
-	Sandbox_FunctionalAppliances_FACCSTheatreChance_tooltip = "Как часто можно найти конфеты из мода Corner Store Candies and Sodas на прилавках кинотеатра.",
+	Sandbox_FunctionalAppliances_FACCSTheatreChance = "Шанс появления конфет из мода «Corner Store Candies and Sodas» в кинотеатре",
+	Sandbox_FunctionalAppliances_FACCSTheatreChance_tooltip = "Как часто можно найти конфеты из мода «Corner Store Candies and Sodas» на прилавках кинотеатра.",
 	Sandbox_FunctionalAppliances_FACCSTheatreChance_option1 = "Изредка",
 	Sandbox_FunctionalAppliances_FACCSTheatreChance_option2 = "Редко",
 	Sandbox_FunctionalAppliances_FACCSTheatreChance_option3 = "Нормально",

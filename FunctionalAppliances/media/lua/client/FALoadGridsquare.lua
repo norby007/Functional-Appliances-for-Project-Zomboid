@@ -1,16 +1,6 @@
 FA = FA or {}
 
-FA.isModEnabled = function(modname)
-    local actmods = getActivatedMods()
-    for i=0, actmods:size()-1, 1 do
-        if actmods:get(i) == modname then
-            return true
-        end
-    end
-    return false
-end
-
-FA.replaceHotDogMachine = function(HotDogMachineObject)
+FA.replaceHotDogMachine = function(HotDogMachineObject, fill)
 	if not HotDogMachineObject:getContainer() then
 		local square = HotDogMachineObject:getSquare()
 		local spr = HotDogMachineObject:getSprite():getName()  
@@ -34,64 +24,69 @@ FA.replaceHotDogMachine = function(HotDogMachineObject)
 		HotDogMachineObject:transmitModData()	
             	HotDogMachineObject:transmitCompleteItemToServer()
              	HotDogMachineObject:transmitUpdatedSpriteToServer()
+	
+		if fill == true then
+			local FAFreshTheatreSpawnChance = SandboxVars.FunctionalAppliances.FAFreshTheatreChance
 
-		local FAFreshTheatreSpawnChance = SandboxVars.FunctionalAppliances.FAFreshTheatreChance
-
-		if FAFreshTheatreSpawnChance == 6 then
-			FAFreshTheatreSpawnChance = 0
-		end
-
-		local RollRand = ZombRand(1,100)+(FAFreshTheatreSpawnChance*10)
-		if RollRand >= 101 then
-			local addItem1 = HotDogMachineObject:getContainer():AddItem("Base.Sausage")
-			if isClient() then
-				HotDogMachineObject:getItemContainer():addItemOnServer(addItem1)
+			if FAFreshTheatreSpawnChance == 6 then
+				FAFreshTheatreSpawnChance = 0
 			end
-			if RollRand >= 121 then
-				local addItem2 = HotDogMachineObject:getContainer():AddItem("Base.Sausage")
-				if isClient() then
-					HotDogMachineObject:getItemContainer():addItemOnServer(addItem2)
-				end
-				if RollRand >= 131 then
-					local addItem3 = HotDogMachineObject:getContainer():AddItem("FunctionalAppliances.FAHotdog")
-					if isClient() then
-						HotDogMachineObject:getItemContainer():addItemOnServer(addItem3)
-					end
-				end
-			end
-		end
 
-		local FASapphsCookingFreshTheatreSpawnChance = SandboxVars.FunctionalAppliances.FASapphsCookingFreshTheatreChance 
-
-		if FASapphsCookingFreshTheatreSpawnChance == 6 then
-			FASapphsCookingFreshTheatreSpawnChance = 0
-		end
-
-		if FA.isModEnabled("sapphcooking") then
-			local RollRand = ZombRand(1,100)+(FASapphsCookingFreshTheatreSpawnChance*10)
+			local RollRand = ZombRand(1,100)+(FAFreshTheatreSpawnChance*10)
 			if RollRand >= 101 then
-				local addItem4 = HotDogMachineObject:getContainer():AddItem("SapphCooking.HotdogBun")
+				local addItem1 = HotDogMachineObject:getContainer():AddItem("Base.Sausage")
+				addItem1:setCooked(true)
 				if isClient() then
-					HotDogMachineObject:getItemContainer():addItemOnServer(addItem4)
+					HotDogMachineObject:getItemContainer():addItemOnServer(addItem1)
 				end
 				if RollRand >= 121 then
-					local addItem5 = HotDogMachineObject:getContainer():AddItem("SapphCooking.HotdogBun")
+					local addItem2 = HotDogMachineObject:getContainer():AddItem("Base.Sausage")
+					addItem2:setCooked(true)
 					if isClient() then
-						HotDogMachineObject:getItemContainer():addItemOnServer(addItem5)
+						HotDogMachineObject:getItemContainer():addItemOnServer(addItem2)
 					end
 					if RollRand >= 131 then
-						local addItem6 = HotDogMachineObject:getContainer():AddItem("SapphCooking.HotdogBun")
+						local addItem3 = HotDogMachineObject:getContainer():AddItem("FunctionalAppliances.FAHotdog")
 						if isClient() then
-							HotDogMachineObject:getItemContainer():addItemOnServer(addItem6)
+							HotDogMachineObject:getItemContainer():addItemOnServer(addItem3)
+						end
+					end
+				end
+			end
+
+			local FASapphsCookingFreshTheatreSpawnChance = SandboxVars.FunctionalAppliances.FASapphsCookingFreshTheatreChance 
+	
+			if FASapphsCookingFreshTheatreSpawnChance == 6 then
+				FASapphsCookingFreshTheatreSpawnChance = 0
+			end
+
+			if FA.isModEnabled("sapphcooking") then
+				local RollRand = ZombRand(1,100)+(FASapphsCookingFreshTheatreSpawnChance*10)
+				if RollRand >= 101 then
+					local addItem4 = HotDogMachineObject:getContainer():AddItem("SapphCooking.HotdogBun")
+					if isClient() then
+						HotDogMachineObject:getItemContainer():addItemOnServer(addItem4)
+					end
+					if RollRand >= 121 then
+						local addItem5 = HotDogMachineObject:getContainer():AddItem("SapphCooking.HotdogBun")
+						if isClient() then
+							HotDogMachineObject:getItemContainer():addItemOnServer(addItem5)
+						end
+						if RollRand >= 131 then
+							local addItem6 = HotDogMachineObject:getContainer():AddItem("SapphCooking.HotdogBun")
+							if isClient() then
+								HotDogMachineObject:getItemContainer():addItemOnServer(addItem6)
+							end
 						end
 					end
 				end
 			end		
 		end
 	end 
+	return HotDogMachineObject
 end
 
-FA.replaceNapkinDispensers = function(NapkinDispensersObject)
+FA.replaceNapkinDispensers = function(NapkinDispensersObject, fill)
 	if not NapkinDispensersObject:getContainer() then
 		local square = NapkinDispensersObject:getSquare()
 		local spr = NapkinDispensersObject:getSprite():getName()  
@@ -111,27 +106,28 @@ FA.replaceNapkinDispensers = function(NapkinDispensersObject)
 		NapkinDispensersObject:transmitModData()	
             	NapkinDispensersObject:transmitCompleteItemToServer()
              	NapkinDispensersObject:transmitUpdatedSpriteToServer()
-
-
-		local addItem1 = NapkinDispensersObject:getContainer():AddItem("Base.PaperNapkins")
-		if isClient() then
-			NapkinDispensersObject:getItemContainer():addItemOnServer(addItem1)
-		end
-		local RollRand = ZombRand(1,100)
-		if RollRand >= 30 then
-			local addItem2 = NapkinDispensersObject:getContainer():AddItem("Base.PaperNapkins")
+	
+		if fill == true then
+			local addItem1 = NapkinDispensersObject:getContainer():AddItem("Base.PaperNapkins")
 			if isClient() then
-				NapkinDispensersObject:getItemContainer():addItemOnServer(addItem2)
+				NapkinDispensersObject:getItemContainer():addItemOnServer(addItem1)
 			end
-			if RollRand >= 60 then
-				local addItem3 = NapkinDispensersObject:getContainer():AddItem("Base.PaperNapkins")
+			local RollRand = ZombRand(1,100)
+			if RollRand >= 30 then
+				local addItem2 = NapkinDispensersObject:getContainer():AddItem("Base.PaperNapkins")
 				if isClient() then
-					NapkinDispensersObject:getItemContainer():addItemOnServer(addItem3)
+					NapkinDispensersObject:getItemContainer():addItemOnServer(addItem2)
 				end
-				if RollRand >= 90 then
-					local addItem4 = NapkinDispensersObject:getContainer():AddItem("Base.PaperNapkins")
+				if RollRand >= 60 then
+					local addItem3 = NapkinDispensersObject:getContainer():AddItem("Base.PaperNapkins")
 					if isClient() then
-						NapkinDispensersObject:getItemContainer():addItemOnServer(addItem4)
+						NapkinDispensersObject:getItemContainer():addItemOnServer(addItem3)
+					end
+					if RollRand >= 90 then
+						local addItem4 = NapkinDispensersObject:getContainer():AddItem("Base.PaperNapkins")
+						if isClient() then
+							NapkinDispensersObject:getItemContainer():addItemOnServer(addItem4)
+						end
 					end
 				end
 			end
@@ -139,7 +135,7 @@ FA.replaceNapkinDispensers = function(NapkinDispensersObject)
 	end 
 end
 
-FA.replacePaperTowelDispensers = function(PaperTowelDispensersObject)
+FA.replacePaperTowelDispensers = function(PaperTowelDispensersObject, fill)
 	if not PaperTowelDispensersObject:getContainer() then
 		local square = PaperTowelDispensersObject:getSquare()
 		local spr = PaperTowelDispensersObject:getSprite():getName()  
@@ -159,26 +155,28 @@ FA.replacePaperTowelDispensers = function(PaperTowelDispensersObject)
 		PaperTowelDispensersObject:transmitModData()	
             	PaperTowelDispensersObject:transmitCompleteItemToServer()
              	PaperTowelDispensersObject:transmitUpdatedSpriteToServer()
-
-		local addItem1 = PaperTowelDispensersObject:getContainer():AddItem("Base.PaperNapkins")
-		if isClient() then
-			PaperTowelDispensersObject:getItemContainer():addItemOnServer(addItem1)
-		end
-		local RollRand = ZombRand(1,100)
-		if RollRand >= 30 then
-			local addItem2 = PaperTowelDispensersObject:getContainer():AddItem("Base.PaperNapkins")
+	
+		if fill == true then
+			local addItem1 = PaperTowelDispensersObject:getContainer():AddItem("Base.PaperNapkins")
 			if isClient() then
-				PaperTowelDispensersObject:getItemContainer():addItemOnServer(addItem2)
+				PaperTowelDispensersObject:getItemContainer():addItemOnServer(addItem1)
 			end
-			if RollRand >= 60 then
-				local addItem3 = PaperTowelDispensersObject:getContainer():AddItem("Base.PaperNapkins")
+			local RollRand = ZombRand(1,100)
+			if RollRand >= 30 then
+				local addItem2 = PaperTowelDispensersObject:getContainer():AddItem("Base.PaperNapkins")
 				if isClient() then
-					PaperTowelDispensersObject:getItemContainer():addItemOnServer(addItem3)
+					PaperTowelDispensersObject:getItemContainer():addItemOnServer(addItem2)
 				end
-				if RollRand >= 90 then
-					local addItem4 = PaperTowelDispensersObject:getContainer():AddItem("Base.PaperNapkins")
+				if RollRand >= 60 then
+					local addItem3 = PaperTowelDispensersObject:getContainer():AddItem("Base.PaperNapkins")
 					if isClient() then
-						PaperTowelDispensersObject:getItemContainer():addItemOnServer(addItem4)
+						PaperTowelDispensersObject:getItemContainer():addItemOnServer(addItem3)
+					end
+					if RollRand >= 90 then
+						local addItem4 = PaperTowelDispensersObject:getContainer():AddItem("Base.PaperNapkins")
+						if isClient() then
+							PaperTowelDispensersObject:getItemContainer():addItemOnServer(addItem4)
+						end
 					end
 				end
 			end
@@ -186,22 +184,26 @@ FA.replacePaperTowelDispensers = function(PaperTowelDispensersObject)
 	end 
 end
 
-FA.DoesItRing = function(PayPhones)
-	if PayPhones and SandboxVars.ElecShutModifier > -1 and GameTime:getInstance():getNightsSurvived() < SandboxVars.ElecShutModifier then
-		local randomNumb = ZombRand(1,100)
-		if randomNumb < 20 then
-			PayPhones:getModData()['Ring'] = "TRUE"
+FA.updatePayPhones = function(PayPhones)
+	if PayPhones:getModData()['Loaded'] ~= true then
+		if SandboxVars.ElecShutModifier > -1 and GameTime:getInstance():getNightsSurvived() < SandboxVars.ElecShutModifier then
+			local randomNumb = ZombRand(1,100)
+			if randomNumb < 20 then
+				PayPhones:getModData()['Ring'] = true
+			else
+				PayPhones:getModData()['Ring'] = false
+			end
 		else
-			PayPhones:getModData()['Ring'] = "FALSE"
+			PayPhones:getModData()['Ring'] = false
 		end
-	else
-		PayPhones:getModData()['Ring'] = "FALSE"
+		PayPhones:getModData()['Loaded'] = true
 	end
 
 	PayPhones:transmitModData()
+	return PayPhones
 end
 
-FA.replacePopcornMachine = function(PopcornMachineObject)
+FA.replacePopcornMachine = function(PopcornMachineObject, fill)
 	if not PopcornMachineObject:getContainer() then
 		local square = PopcornMachineObject:getSquare()
 		local spr = PopcornMachineObject:getSprite():getName()  
@@ -225,33 +227,36 @@ FA.replacePopcornMachine = function(PopcornMachineObject)
 		PopcornMachineObject:transmitModData()	
             	PopcornMachineObject:transmitCompleteItemToServer()
              	PopcornMachineObject:transmitUpdatedSpriteToServer()
-
-		local FAFreshTheatreSpawnChance = SandboxVars.FunctionalAppliances.FAFreshTheatreChance
-
-		if (FAFreshTheatreSpawnChance == 6) then
-			FAFreshTheatreSpawnChance = 0
-		end
-
-		local RollRand = ZombRand(1,100)+(FAFreshTheatreSpawnChance*10)
-		if RollRand >= 101 then
-			local addItem1 = PopcornMachineObject:getContainer():AddItem("FunctionalAppliances.FATheaterPopcorn")
-			if isClient() then
-				PopcornMachineObject:getItemContainer():addItemOnServer(addItem1)
+	
+		if fill == true then
+			local FAFreshTheatreSpawnChance = SandboxVars.FunctionalAppliances.FAFreshTheatreChance
+	
+			if (FAFreshTheatreSpawnChance == 6) then
+				FAFreshTheatreSpawnChance = 0
 			end
-			if RollRand >= 121 then
-				local addItem2 = PopcornMachineObject:getContainer():AddItem("FunctionalAppliances.FAButteredPopcorn")
+	
+			local RollRand = ZombRand(1,100)+(FAFreshTheatreSpawnChance*10)
+			if RollRand >= 101 then
+				local addItem1 = PopcornMachineObject:getContainer():AddItem("FunctionalAppliances.FATheaterPopcorn")
 				if isClient() then
-					PopcornMachineObject:getItemContainer():addItemOnServer(addItem2)
+					PopcornMachineObject:getItemContainer():addItemOnServer(addItem1)
 				end
-				if RollRand >= 131 then
-					local addItem3 = PopcornMachineObject:getContainer():AddItem("FunctionalAppliances.FAButteredPopcorn")
+				if RollRand >= 121 then
+					local addItem2 = PopcornMachineObject:getContainer():AddItem("FunctionalAppliances.FAButteredPopcorn")
 					if isClient() then
-						PopcornMachineObject:getItemContainer():addItemOnServer(addItem3)
+						PopcornMachineObject:getItemContainer():addItemOnServer(addItem2)
+					end
+					if RollRand >= 131 then
+						local addItem3 = PopcornMachineObject:getContainer():AddItem("FunctionalAppliances.FAButteredPopcorn")
+						if isClient() then
+							PopcornMachineObject:getItemContainer():addItemOnServer(addItem3)
+						end
 					end
 				end
 			end
 		end
 	end
+	return PopcornMachineObject
 end
 
 FA.depleteTank = function(tank)
@@ -317,7 +322,7 @@ local FASyrupsList = {
 	"FunctionalAppliances.FAColaSodaSyrupBox",
 }
 
-FA.replaceSlurpBurp = function(SlurpBurp)
+FA.replaceSlurpBurp = function(SlurpBurp, fill)
 	if not SlurpBurp:getContainer() then
 		local square = SlurpBurp:getSquare()
 		local spr = SlurpBurp:getSprite():getName()  
@@ -330,7 +335,7 @@ FA.replaceSlurpBurp = function(SlurpBurp)
             	SlurpBurp:setIsContainer(true)
              	SlurpBurp:getContainer():setType("slurpNBurp")
              	SlurpBurp:getContainer():setCapacity(100)
-		SlurpBurp:getSprite():getProperties():Set(IsoFlagType.waterPiped, "TRUE")
+		SlurpBurp:getSprite():getProperties():Set(IsoFlagType.waterPiped, "true")
 
              	square:AddTileObject(SlurpBurp, index)
 		square:transmitAddObjectToSquare(SlurpBurp, SlurpBurp:getObjectIndex())
@@ -338,40 +343,130 @@ FA.replaceSlurpBurp = function(SlurpBurp)
 		SlurpBurp:transmitModData()	
             	SlurpBurp:transmitCompleteItemToServer()
              	SlurpBurp:transmitUpdatedSpriteToServer()
+	
+		if fill == true then
+			local FASyrupsSpawnChance = SandboxVars.FunctionalAppliances.SyrupsChance
 
-		local FASyrupsSpawnChance = SandboxVars.FunctionalAppliances.SyrupsChance
-
-		if (FASyrupsSpawnChance == 6) then
-			FASyrupsSpawnChance = 0
-		end
-
-		if FASyrupsSpawnChance > 0 then
-			local addItem1 = SlurpBurp:getContainer():AddItem("FunctionalAppliances.FACO2Tank")
-			local addItem2 = SlurpBurp:getContainer():AddItem(FASyrupsList[FA.SyrupPickOne(#FASyrupsList)])
-			if isClient() then
-				SlurpBurp:getItemContainer():addItemOnServer(addItem1)
-				SlurpBurp:getItemContainer():addItemOnServer(addItem2)
+			if (FASyrupsSpawnChance == 6) then
+				FASyrupsSpawnChance = 0
 			end
-			FA.depleteTank(addItem1)
-			FA.depleteSyrup(addItem2)
-		end
 
-		local RollRand = ZombRand(1,100)+(FASyrupsSpawnChance*10)
-		if RollRand >= 101 then
-			local addItem3 = SlurpBurp:getContainer():AddItem(FASyrupsList[FA.SyrupPickOne(#FASyrupsList)])
-			if isClient() then
-				SlurpBurp:getItemContainer():addItemOnServer(addItem3)
-			end
-			FA.depleteSyrup(addItem3)
-			if RollRand >= 121 then
-				local addItem4 = SlurpBurp:getContainer():AddItem(FASyrupsList[FA.SyrupPickOne(#FASyrupsList)])
+			if FASyrupsSpawnChance > 0 then
+				local addItem1 = SlurpBurp:getContainer():AddItem("FunctionalAppliances.FACO2Tank")
+				local addItem2 = SlurpBurp:getContainer():AddItem(FASyrupsList[FA.SyrupPickOne(#FASyrupsList)])
 				if isClient() then
-					SlurpBurp:getItemContainer():addItemOnServer(addItem4)
+					SlurpBurp:getItemContainer():addItemOnServer(addItem1)
+					SlurpBurp:getItemContainer():addItemOnServer(addItem2)
 				end
-				FA.depleteSyrup(addItem4)
+				FA.depleteTank(addItem1)
+				FA.depleteSyrup(addItem2)
+			end
+
+			local RollRand = ZombRand(1,100)+(FASyrupsSpawnChance*10)
+			if RollRand >= 101 then
+				local addItem3 = SlurpBurp:getContainer():AddItem(FASyrupsList[FA.SyrupPickOne(#FASyrupsList)])
+				if isClient() then
+					SlurpBurp:getItemContainer():addItemOnServer(addItem3)
+				end
+				FA.depleteSyrup(addItem3)
+				if RollRand >= 121 then
+					local addItem4 = SlurpBurp:getContainer():AddItem(FASyrupsList[FA.SyrupPickOne(#FASyrupsList)])
+					if isClient() then
+						SlurpBurp:getItemContainer():addItemOnServer(addItem4)
+					end
+					FA.depleteSyrup(addItem4)
+				end
 			end
 		end
 	end
+
+	SlurpBurp:getSprite():getProperties():Set(IsoFlagType.waterPiped, "true")
+
+	return SlurpBurp
+end
+
+FA.updateSodaFountain = function(SodaFountain)
+	SodaFountain:getSprite():getProperties():Set(IsoFlagType.waterPiped, "true")
+        --SodaFountain:transmitCompleteItemToServer()
+        --SodaFountain:transmitUpdatedSpriteToServer()
+	return SodaFountain
+end
+
+FA.updateDeepFryers = function(DeepFryers, fill)
+	if DeepFryers:getModData()['Loaded'] ~= true and fill == true then
+		DeepFryers:getModData()['Loaded'] = true
+
+		if fill == true and DeepFryers:getModData()['VatOil'] ~= "VegetableOil" and DeepFryers:getModData()['VatOil'] ~= "CookingOil" then
+			local FADeepFryerOil = SandboxVars.FunctionalAppliances.FADeepFryerOil
+			local chanceOfOil = 0
+			local RollRand = 0
+	
+			if FADeepFryerOil == 6 then
+				chanceOfOil = 0
+			elseif FADeepFryerOil == 1 then
+				chanceOfOil = 5
+			elseif FADeepFryerOil == 2 then
+				chanceOfOil = 20
+			elseif FADeepFryerOil == 3 then
+				chanceOfOil = 40
+			elseif FADeepFryerOil == 4 then
+				chanceOfOil = 60
+			elseif FADeepFryerOil == 5 then
+				chanceOfOil = 80
+			end
+	
+			RollRand = ZombRand(1,100)
+			if RollRand < chanceOfOil then
+				DeepFryers:getModData()['VatOil'] = "VegetableOil" 
+			else
+				DeepFryers:getModData()['VatOil'] = "Empty" 
+			end
+		end
+	elseif DeepFryers:getModData()['VatOil'] ~= "VegetableOil" and DeepFryers:getModData()['VatOil'] ~= "CookingOil" then
+		DeepFryers:getModData()['Loaded'] = true
+		DeepFryers:getModData()['VatOil'] = "Empty" 
+	end
+
+	DeepFryers:getSquare():transmitModdata()
+	DeepFryers:transmitModData()
+
+	return DeepFryers
+end
+
+FA.updateHeatedCounter = function(HeatedCounter, fill)
+	local square = HeatedCounter:getSquare()
+
+	if HeatedCounter:getModData()['Loaded'] ~= true and fill == true then
+		HeatedCounter:getModData()['Loaded'] = true
+		local roomName = square:getRoom():getName()
+		if roomName == "icecreamkitchen" then
+			HeatedCounter:getContainer():setCustomTemperature(0.25)
+			HeatedCounter:getModData()['CustomTemp'] = "Cold" -- set to activate cold mode asap for ice cream shops
+		else
+			HeatedCounter:getContainer():setCustomTemperature(1.5)
+			HeatedCounter:getModData()['CustomTemp'] = "Warm" -- else it's a warming coounter
+		end
+	end
+
+	if HeatedCounter:getModData()['CustomTemp'] == "Warm" and ((SandboxVars.AllowExteriorGenerator and square:haveElectricity()) or (SandboxVars.ElecShutModifier > -1 and GameTime:getInstance():getNightsSurvived() < SandboxVars.ElecShutModifier and square:isOutside() == false)) then
+		HeatedCounter:getContainer():setCustomTemperature(1.5) 	-- just below cooking
+		HeatedCounter:getModData()['CustomTemp'] = "Warm" 
+	elseif HeatedCounter:getModData()['CustomTemp'] == "Hot" and ((SandboxVars.AllowExteriorGenerator and square:haveElectricity()) or (SandboxVars.ElecShutModifier > -1 and GameTime:getInstance():getNightsSurvived() < SandboxVars.ElecShutModifier and square:isOutside() == false)) then
+		HeatedCounter:getContainer():setCustomTemperature(1.61) 	-- just enough to start cooking
+		HeatedCounter:getModData()['CustomTemp'] = "Hot" 
+	elseif HeatedCounter:getModData()['CustomTemp'] == "Cold" and ((SandboxVars.AllowExteriorGenerator and square:haveElectricity()) or (SandboxVars.ElecShutModifier > -1 and GameTime:getInstance():getNightsSurvived() < SandboxVars.ElecShutModifier and square:isOutside() == false)) then
+		HeatedCounter:getContainer():setCustomTemperature(0.25) 	-- cold
+		HeatedCounter:getModData()['CustomTemp'] = "Cold" 
+	else
+		HeatedCounter:getContainer():setCustomTemperature(1) -- room temp
+		HeatedCounter:getModData()['CustomTemp'] = "Off"
+	end
+
+	HeatedCounter:getSquare():transmitModdata()
+	HeatedCounter:transmitModData()
+	HeatedCounter:getContainer():requestSync()
+
+	return HeatedCounter
 end
 
 FA.onLoadGridsquare = function(square)
@@ -382,7 +477,11 @@ FA.onLoadGridsquare = function(square)
 	local PaperTowelDispensersObject = nil
 	local NapkinDispensersObject = nil
 	local HotDogMachine = nil
+	local DeepFryers = nil
+	local HeatedCounter = nil
+
 	local objects = square:getObjects()
+	local fill = true
 
         for i=1, objects:size()-1 do
         	local thisObject = objects:get(i)
@@ -405,30 +504,40 @@ FA.onLoadGridsquare = function(square)
 				NapkinDispensersObject = thisObject
                 	elseif groupName == "Fossoil Candy" then
 				HotDogMachine = thisObject
+			elseif customName == "Industrial 2000" and groupName == "Fryers Club" then
+				DeepFryers = thisObject	
+			elseif customName == "Counter" and (groupName == "Corner A" or groupName == "Corner B" or groupName == "Middle") then	
+				HeatedCounter = thisObject
                 	end
             	end
         end
 
 	if SlurpBurp then
-		FA.replaceSlurpBurp(SlurpBurp)
+		FA.replaceSlurpBurp(SlurpBurp, fill)
 	end
 	if SodaFountain then
-		SodaFountain:getSprite():getProperties():Set(IsoFlagType.waterPiped, "TRUE")
+		FA.updateSodaFountain(SodaFountain)
+	end
+	if DeepFryers then
+		FA.updateDeepFryers(DeepFryers, fill)
 	end
 	if PopcornMachine then
-		FA.replacePopcornMachine(PopcornMachine)
+		FA.replacePopcornMachine(PopcornMachine, fill)
 	end
 	if PayPhones then
-		FA.DoesItRing(PayPhones)
+		FA.updatePayPhones(PayPhones)
 	end
 	if PaperTowelDispensersObject then
-		FA.replacePaperTowelDispensers(PaperTowelDispensersObject)
+		FA.replacePaperTowelDispensers(PaperTowelDispensersObject, fill)
 	end
 	if NapkinDispensersObject then
-		FA.replaceNapkinDispensers(NapkinDispensersObject)
+		FA.replaceNapkinDispensers(NapkinDispensersObject, fill)
 	end
 	if HotDogMachine then
-		FA.replaceHotDogMachine(HotDogMachine)
+		FA.replaceHotDogMachine(HotDogMachine, fill)
+	end
+	if HeatedCounter then
+		FA.updateHeatedCounter(HeatedCounter, fill)
 	end
 end
 

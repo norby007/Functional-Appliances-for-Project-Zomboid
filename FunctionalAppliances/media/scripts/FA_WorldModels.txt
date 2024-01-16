@@ -157,5 +157,4 @@ module Base
 		texture = WorldItems/FACO2Tank,
 		scale = 0.20,
 	}
-
 }

@@ -24,7 +24,6 @@ module FunctionalAppliances
 		DaysFresh 		= 1,
 		DaysTotallyRotten 	= 7,
 	}
-
 	item FAButteredPopcorn
 	{
 		DisplayCategory 	= Food,
@@ -44,7 +43,6 @@ module FunctionalAppliances
 		DaysFresh 		= 1,
 		DaysTotallyRotten 	= 7,
 	}
-
 	item FABucketofButteredPopcorn
 	{
 		DisplayName 		= Bucket of Buttered Theater Popcorn,
@@ -65,7 +63,6 @@ module FunctionalAppliances
 		DaysFresh 		= 1,
 		DaysTotallyRotten 	= 30,
 	}
-
 	item FABucketofPopcorn
 	{
 		DisplayName 		= Bucket of Theater Popcorn,
@@ -115,7 +112,6 @@ module FunctionalAppliances
 		DaysFresh 		= 1,
 		DaysTotallyRotten 	= 14,
 	}
-
 	item FAFountainCupLemonLimeSoda
 	{
 		DisplayName 		= Fountain Cup with Lemon Lime Soda,
@@ -144,7 +140,6 @@ module FunctionalAppliances
 		DaysFresh 		= 1,
 		DaysTotallyRotten 	= 14,
 	}
-
 	item FAFountainCupColaSoda
 	{
 		DisplayName 		= Fountain Cup with KY Cola Soda,
@@ -173,7 +168,6 @@ module FunctionalAppliances
 		DaysFresh 		= 1,
 		DaysTotallyRotten 	= 14,
 	}
-
 	item FAFountainCupRootBeerSoda
 	{
 		DisplayName 		= Fountain Cup with Root Beer Soda,
@@ -202,7 +196,6 @@ module FunctionalAppliances
 		DaysFresh 		= 1,
 		DaysTotallyRotten 	= 14,
 	}
-
 	item FAFountainCupBerrySoda
 	{
 		DisplayName 		= Fountain Cup with Homemade Berry Flavored Soda,
@@ -231,7 +224,6 @@ module FunctionalAppliances
 		DaysFresh 		= 1,
 		DaysTotallyRotten 	= 7,
 	}
-
 	item FAFountainCupCarbonatedWater
 	{
 		DisplayName 		= Fountain Cup of Carbonated Water,
@@ -309,7 +301,6 @@ module FunctionalAppliances
 		StaticModel = FAPopBottleLemonLime,
 		WorldStaticModel = FAPopBottleWorldLemonLime,
 	}
-
 	item FAPopBottleRootBeer
 	{
 		DisplayName = Root Beer Soda,
@@ -335,7 +326,6 @@ module FunctionalAppliances
 		StaticModel = FAPopBottleRootBeer,
 		WorldStaticModel = FAPopBottleWorldRootBeer,
 	}
-
 	item FAPopBottleBerry
 	{
 		DisplayName = Homemade Berry Flavored Soda,
@@ -361,7 +351,6 @@ module FunctionalAppliances
 		StaticModel = FAPopBottleBerry,
 		WorldStaticModel = FAPopBottleWorldBerry,
 	}
-
 	item FAPopBottleCola
 	{
 		DisplayName = KY Cola Soda,
@@ -531,7 +520,6 @@ module FunctionalAppliances
 		EvolvedRecipe 		= Soup:9;Stew:9;Beer:9;Beer2:9,
 		EvolvedRecipeName 	= Beer,
 	}
-
 	item FABeerMugBubBeer
 	{
 		DisplayName 		= Mug of Bub Beer,
@@ -561,7 +549,6 @@ module FunctionalAppliances
 		EvolvedRecipe 		= Soup:9;Stew:9;Beer:9;Beer2:9,
 		EvolvedRecipeName 	= Beer,
 	}
-
 	item FABeerMugBubLiteBeer
 	{
 		DisplayName 		= Mug of Bub Lite Beer,
@@ -591,7 +578,6 @@ module FunctionalAppliances
 		EvolvedRecipe 		= Soup:9;Stew:9;Beer:9;Beer2:9,
 		EvolvedRecipeName 	= Beer,
 	}
-
 	item FABeerMugSwillerBeer
 	{
 		DisplayName 		= Mug of Swiller Beer,
@@ -621,7 +607,6 @@ module FunctionalAppliances
 		EvolvedRecipe 		= Soup:9;Stew:9;Beer:9;Beer2:9,
 		EvolvedRecipeName 	= Beer,
 	}
-
 	item FABeerMugSwillerLiteBeer
 	{
 		DisplayName 		= Mug of Swiller Lite Beer,
@@ -651,7 +636,6 @@ module FunctionalAppliances
 		EvolvedRecipe 		= Soup:9;Stew:9;Beer:9;Beer2:9,
 		EvolvedRecipeName 	= Beer,
 	}
-
 	item FABeerMugHomeBrewBeer
 	{
 		DisplayName 		= Mug of Home Brew Beer,
@@ -681,7 +665,6 @@ module FunctionalAppliances
 		EvolvedRecipe 		= Soup:9;Stew:9;Beer:9;Beer2:9,
 		EvolvedRecipeName 	= Beer,
 	}
-
 	item FAPlasticCupBubBeer
 	{
 		DisplayName 		= Cup of Bub Beer,
@@ -711,7 +694,6 @@ module FunctionalAppliances
 		EvolvedRecipe 		= Soup:9;Stew:9;Beer:9;Beer2:9,
 		EvolvedRecipeName 	= Beer,
 	}
-
 	item FAPlasticCupBubLiteBeer
 	{
 		DisplayName 		= Cup of Bub Lite Beer,
@@ -741,7 +723,6 @@ module FunctionalAppliances
 		EvolvedRecipe 		= Soup:9;Stew:9;Beer:9;Beer2:9,
 		EvolvedRecipeName 	= Beer,
 	}
-
 	item FAPlasticCupSwillerBeer
 	{
 		DisplayName 		= Cup of Swiller Beer,
@@ -771,7 +752,6 @@ module FunctionalAppliances
 		EvolvedRecipe 		= Soup:9;Stew:9;Beer:9;Beer2:9,
 		EvolvedRecipeName 	= Beer,
 	}
-
 	item FAPlasticCupSwillerLiteBeer
 	{
 		DisplayName 		= Cup of Swiller Lite Beer,
@@ -801,7 +781,6 @@ module FunctionalAppliances
 		EvolvedRecipe 		= Soup:9;Stew:9;Beer:9;Beer2:9,
 		EvolvedRecipeName 	= Beer,
 	}
-
 	item FAPlasticCupHomeBrewBeer
 	{
 		DisplayName 		= Cup of Home Brew Beer,
@@ -831,7 +810,6 @@ module FunctionalAppliances
 		EvolvedRecipe 		= Soup:9;Stew:9;Beer:9;Beer2:9,
 		EvolvedRecipeName 	= Beer,
 	}
-
 	item FAPlasticCupBeer
 	{
 		DisplayName 		= Cup of Beer,
@@ -861,7 +839,6 @@ module FunctionalAppliances
 		EvolvedRecipe 		= Soup:9;Stew:9;Beer:9;Beer2:9,
 		EvolvedRecipeName 	= Beer,
 	}
-
     	item FAPlasticCupWater
    	{
         	DisplayName 		= Plastic Cup of Water,
@@ -884,7 +861,6 @@ module FunctionalAppliances
 		--StaticModel 		= FAPlasticCup,
         	WorldStaticModel 	= FAPlasticCup,
     	}
-
     	item FAPlasticCup
     	{
         	DisplayCategory 	= WaterContainer,
@@ -900,7 +876,6 @@ module FunctionalAppliances
         	RainFactor 		= 0.2,
         	Tooltip 		= Tooltip_item_RainFromGroundOnlyPurifyMicrowave,
     	}
-
 	item FABubBeerBottle
 	{
 		DisplayName 		= Bottle of Bub Beer,
@@ -928,7 +903,6 @@ module FunctionalAppliances
 		Tags 			= LowAlcohol,
 		EvolvedRecipeName 	= Beer,
 	}
-
 	item FABubLiteBeerBottle
 	{
 		DisplayName 		= Bottle of Bub Lite Beer,
@@ -956,7 +930,6 @@ module FunctionalAppliances
 		Tags 			= LowAlcohol,
 		EvolvedRecipeName 	= Beer,
 	}
-
 	item FASwillerBeerBottle
 	{
 		DisplayName 		= Bottle of Swiller Beer,
@@ -984,7 +957,6 @@ module FunctionalAppliances
 		Tags 			= LowAlcohol,
 		EvolvedRecipeName 	= Beer,
 	}
-
 	item FASwillerLiteBeerBottle
 	{
 		DisplayName 		= Bottle of Swiller Lite Beer,
@@ -1012,7 +984,6 @@ module FunctionalAppliances
 		Tags 			= LowAlcohol,
 		EvolvedRecipeName 	= Beer,
 	}
-
 	item FAHomeBrewBeerBottle
 	{
 		DisplayName 		= Bottle of Home Brew Beer,
@@ -1073,7 +1044,6 @@ module FunctionalAppliances
         	--StaticModel 		= FAKeg,
         	WorldStaticModel 	= FAKeg,
     	}
-
     	item FABubLiteKeg
     	{
         	DisplayCategory 	= Food,
@@ -1095,7 +1065,6 @@ module FunctionalAppliances
         	--StaticModel 		= FAKeg,
         	WorldStaticModel 	= FAKeg,
     	}
-
     	item FASwillerKeg
     	{
         	DisplayCategory 	= Food,
@@ -1117,7 +1086,6 @@ module FunctionalAppliances
         	--StaticModel 		= FAKeg,
         	WorldStaticModel 	= FAKeg,
     	}
-
     	item FASwillerLiteKeg
     	{
         	DisplayCategory 	= Food,
@@ -1139,7 +1107,6 @@ module FunctionalAppliances
         	--StaticModel 		= FAKeg,
         	WorldStaticModel 	= FAKeg,
     	}
-
     	item FAHomeBrewKeg
     	{
         	DisplayCategory 	= Food,
@@ -1177,7 +1144,6 @@ module FunctionalAppliances
 		WorldStaticModel 	= FACO2Tank,
 		cantBeConsolided	= TRUE,
 	}
-
 	item FACO2Tank
 	{
 	    	DisplayCategory 	= Material,
@@ -1196,7 +1162,6 @@ module FunctionalAppliances
 		WorldStaticModel 	= FACO2Tank,
 		cantBeConsolided	= TRUE,
 	}
-
 	item FADIYCO2Tank
 	{
 	    	DisplayCategory 	= Material,
@@ -1245,7 +1210,6 @@ module FunctionalAppliances
         	--StaticModel 		= FASodaSyrupBox,
         	WorldStaticModel 	= FASodaSyrupBox,
     	}
-
     	item FAOrangeSodaSyrupBox
     	{
         	DisplayCategory 	= Food,
@@ -1265,7 +1229,6 @@ module FunctionalAppliances
         	--StaticModel 		= FASodaSyrupBox,
         	WorldStaticModel 	= FASodaSyrupBox,
     	}
-
     	item FALemonLimeSodaSyrupBox
     	{
         	DisplayCategory 	= Food,
@@ -1285,7 +1248,6 @@ module FunctionalAppliances
         	--StaticModel 		= FASodaSyrupBox,
         	WorldStaticModel 	= FASodaSyrupBox,
     	}
-
     	item FARootBeerSodaSyrupBox
     	{
         	DisplayCategory 	= Food,
@@ -1305,7 +1267,6 @@ module FunctionalAppliances
         	--StaticModel 		= FASodaSyrupBox,
         	WorldStaticModel 	= FASodaSyrupBox,
     	}
-
     	item FAColaSodaSyrupBox
     	{
         	DisplayCategory 	= Food,
@@ -1343,7 +1304,6 @@ module FunctionalAppliances
 		UnhappyChange 		= 5,
 		ThirstChange 		= -2,
 	}
-
 	item FAPotatoSkins
 	{
 		HungerChange 		= -1,
@@ -1361,7 +1321,6 @@ module FunctionalAppliances
 		UnhappyChange 		= 5,
 		ThirstChange 		= 5,
 	}
-
 	item FAFriedPotatoSkins
 	{
 		HungerChange 		= -15,
@@ -1582,6 +1541,495 @@ module FunctionalAppliances
 		Proteins = 12,
 		CustomEatSound = EatingCrispy,
 	}
+
+	item FAHotDrinkTeaMugl
+	{
+		DisplayName = Mug of Hot Tea,
+		DisplayCategory = Food,
+		Type = Food,
+		Weight = 0.5,
+		Icon = MugFulll,
+		GoodHot = true,
+		IsCookable = true,
+		ReplaceOnUse = Mugl,
+		MinutesToCook = 10,
+		MinutesToBurn = 50,
+		ThirstChange = -20,
+		UnhappyChange = -10,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromMug,
+		StaticModel = Mug,
+		Tags = AlcoholicBeverage;LowAlcohol;HerbalTea;CoffeeMaker,
+		WorldStaticModel = Mug,
+	}
+	item FAHotDrinkTeaRed
+	{
+		DisplayName = Mug of Hot Tea,
+		DisplayCategory = Food,
+		Type = Food,
+		Weight = 0.5,
+		Icon = MugRedFull,
+		GoodHot = true,
+		IsCookable = true,
+		ReplaceOnUse = MugRed,
+		MinutesToCook = 10,
+		MinutesToBurn = 50,
+		ThirstChange = -20,
+		UnhappyChange = -10,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromMug,
+		StaticModel = MugRed,
+		Tags = AlcoholicBeverage;LowAlcohol;HerbalTea;CoffeeMaker,
+		WorldStaticModel = MugRed,
+	}
+	item FAHotDrinkTeaWhite
+	{
+		DisplayName = Mug of Hot Tea,
+		DisplayCategory = Food,
+		Type = Food,
+		Weight = 0.5,
+		Icon = MugWhiteFull,
+		GoodHot = true,
+		IsCookable = true,
+		ReplaceOnUse = MugWhite,
+		MinutesToCook = 10,
+		MinutesToBurn = 50,
+		ThirstChange = -20,
+		UnhappyChange = -10,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromMug,
+		StaticModel = MugWhite,
+		Tags = AlcoholicBeverage;LowAlcohol;HerbalTea;CoffeeMaker,
+		WorldStaticModel = MugWhite,
+	}
+	item FAHotDrinkTeaSpiffo
+	{
+		DisplayName = Mug of Hot Tea,
+		DisplayCategory = Food,
+		Type = Food,
+		Weight = 0.5,
+		Icon = MugSpiffoFull,
+		GoodHot = true,
+		IsCookable = true,
+		ReplaceOnUse = MugSpiffo,
+		MinutesToCook = 10,
+		MinutesToBurn = 50,
+		ThirstChange = -20,
+		UnhappyChange = -10,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromMug,
+		StaticModel = MugSpiffo,
+		Tags = AlcoholicBeverage;LowAlcohol;HerbalTea;CoffeeMaker,
+		WorldStaticModel = MugSpiffo,
+	}
+
+	item FAHotDrinkCoffeeMugl
+	{
+		DisplayName = Mug of Hot Coffee,
+		DisplayCategory = Food,
+		Type = Food,
+		Weight = 0.5,
+		Icon = MugFulll,
+		GoodHot = true,
+		IsCookable = true,
+		ReplaceOnUse = Mugl,
+		MinutesToCook = 10,
+		MinutesToBurn = 50,
+		FatigueChange = -5,
+		StressChange = -5,
+		ThirstChange = -20,
+		UnhappyChange = -10,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromCan,
+		StaticModel = Mug,
+		WorldStaticModel = Mug,
+		Tags = AlcoholicBeverage;LowAlcohol;HerbalTea;CoffeeMaker,
+	}
+	item FAHotDrinkCoffeeRed
+	{
+		DisplayName = Mug of Hot Coffee,
+		DisplayCategory = Food,
+		Type = Food,
+		Weight = 0.5,
+		Icon = MugRedFull,
+		GoodHot = true,
+		IsCookable = true,
+		ReplaceOnUse = MugRed,
+		MinutesToCook = 10,
+		MinutesToBurn = 50,
+		FatigueChange = -5,
+		StressChange = -5,
+		ThirstChange = -20,
+		UnhappyChange = -10,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromCan,
+		StaticModel = MugRed,
+		WorldStaticModel = MugRed,
+		Tags = AlcoholicBeverage;LowAlcohol;HerbalTea;CoffeeMaker,
+	}
+	item FAHotDrinkCoffeeWhite
+	{
+		DisplayName = Mug of Hot Coffee,
+		DisplayCategory = Food,
+		Type = Food,
+		Weight = 0.5,
+		Icon = MugWhiteFull,
+		GoodHot = true,
+		IsCookable = true,
+		ReplaceOnUse = MugWhite,
+		MinutesToCook = 10,
+		MinutesToBurn = 50,
+		FatigueChange = -5,
+		StressChange = -5,
+		ThirstChange = -20,
+		UnhappyChange = -10,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromCan,
+		StaticModel = MugWhite,
+		WorldStaticModel = MugWhite,
+		Tags = AlcoholicBeverage;LowAlcohol;HerbalTea;CoffeeMaker,
+	}
+	item FAHotDrinkCoffeeSpiffo
+	{
+		DisplayName = Mug of Hot Coffee,
+		DisplayCategory = Food,
+		Type = Food,
+		Weight = 0.5,
+		Icon = MugSpiffoFull,
+		GoodHot = true,
+		IsCookable = true,
+		ReplaceOnUse = MugSpiffo,
+		MinutesToCook = 10,
+		MinutesToBurn = 50,
+		FatigueChange = -5,
+		StressChange = -5,
+		ThirstChange = -20,
+		UnhappyChange = -10,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromCan,
+		StaticModel = MugSpiffo,
+		WorldStaticModel = MugSpiffo,
+		Tags = AlcoholicBeverage;LowAlcohol;HerbalTea;CoffeeMaker,
+	}
+
+	item FAHotDrinkEspressoTeacup
+	{
+		DisplayCategory = Food,
+		Weight = 0.5,
+		Type = Food,
+		DisplayName = Cup of Espresso,
+		CustomEatSound = DrinkingFromCan,
+		Icon = Teacup,
+		ThirstChange = -15,
+		HungerChange = -15,
+		UnhappyChange = -25,
+		FatigueChange = -50,
+		StressChange = -20,
+		ReplaceOnUse = Teacup,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromMug,
+		GoodHot = true,
+		StaticModel = Mug,
+		WorldStaticModel = Teacup_Ground,
+		Tags = CoffeeCup,
+	}
+	item FAHotDrinkEspressoMugl
+	{
+		DisplayCategory = Food,
+		Weight = 0.5,
+		Type = Food,
+		DisplayName = Mug of Espresso,
+		CustomEatSound = DrinkingFromCan,
+		Icon = MugFulll,
+		ThirstChange = -15,
+		HungerChange = -15,
+		UnhappyChange = -25,
+		FatigueChange = -50,
+		StressChange = -20,
+		ReplaceOnUse = Mugl,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromMug,
+		GoodHot = true,
+		StaticModel = Mug,
+		WorldStaticModel = Mug,
+		Tags = CoffeeCup,
+	}
+	item FAHotDrinkEspressoRed
+	{
+		DisplayCategory = Food,
+		Weight = 0.5,
+		Type = Food,
+		DisplayName = Mug of Espresso,
+		CustomEatSound = DrinkingFromCan,
+		Icon = MugRedFull,
+		ThirstChange = -15,
+		HungerChange = -15,
+		UnhappyChange = -25,
+		FatigueChange = -50,
+		StressChange = -20,
+		ReplaceOnUse = MugRed,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromMug,
+		GoodHot = true,
+		StaticModel = MugRed,
+		WorldStaticModel = MugRed,
+		Tags = CoffeeCup,
+	}
+	item FAHotDrinkEspressoWhite
+	{
+		DisplayCategory = Food,
+		Weight = 0.5,
+		Type = Food,
+		DisplayName = Mug of Espresso,
+		CustomEatSound = DrinkingFromCan,
+		Icon = MugWhiteFull,
+		ThirstChange = -15,
+		HungerChange = -15,
+		UnhappyChange = -25,
+		FatigueChange = -50,
+		StressChange = -20,
+		ReplaceOnUse = MugWhite,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromMug,
+		GoodHot = true,
+		StaticModel = MugWhite,
+		WorldStaticModel = MugWhite,
+		Tags = CoffeeCup,
+	}
+	item FAHotDrinkEspressoSpiffo
+	{
+		DisplayCategory = Food,
+		Weight = 0.5,
+		Type = Food,
+		DisplayName = Mug of Espresso,
+		CustomEatSound = DrinkingFromCan,
+		Icon = MugSpiffoFull,
+		ThirstChange = -15,
+		HungerChange = -15,
+		UnhappyChange = -25,
+		FatigueChange = -50,
+		StressChange = -20,
+		ReplaceOnUse = MugSpiffo,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromMug,
+		GoodHot = true,
+		StaticModel = MugSpiffo,
+		WorldStaticModel = MugSpiffo,
+		Tags = CoffeeCup,
+	}
+
+	item FAHotDrinkLatteTeacup
+	{
+		DisplayCategory = Food,
+		Weight = 0.5,
+		Type = Food,
+		DisplayName = Cup of Latte,
+		CustomEatSound = DrinkingFromCan,
+		Icon = Teacup,
+		ThirstChange = -15,
+		HungerChange = -18,
+		UnhappyChange = -28,
+		FatigueChange = -50,
+		StressChange = -23,
+		ReplaceOnUse = Teacup,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromMug,
+		GoodHot = true,
+		StaticModel = Mug,
+		WorldStaticModel = Teacup_Ground,
+		Tags = CoffeeCup,
+	}
+	item FAHotDrinkLatteMugl
+	{
+		DisplayCategory = Food,
+		Weight = 0.5,
+		Type = Food,
+		DisplayName = Mug of Latte,
+		CustomEatSound = DrinkingFromCan,
+		Icon = MugFulll,
+		ThirstChange = -15,
+		HungerChange = -18,
+		UnhappyChange = -28,
+		FatigueChange = -50,
+		StressChange = -23,
+		ReplaceOnUse = Mugl,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromMug,
+		GoodHot = true,
+		StaticModel = Mug,
+		WorldStaticModel = Mug,
+		Tags = CoffeeCup,
+	}
+	item FAHotDrinkLatteRed
+	{
+		DisplayCategory = Food,
+		Weight = 0.5,
+		Type = Food,
+		DisplayName = Mug of Latte,
+		CustomEatSound = DrinkingFromCan,
+		Icon = MugRedFull,
+		ThirstChange = -15,
+		HungerChange = -18,
+		UnhappyChange = -28,
+		FatigueChange = -50,
+		StressChange = -23,
+		ReplaceOnUse = MugRed,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromMug,
+		GoodHot = true,
+		StaticModel = MugRed,
+		WorldStaticModel = MugRed,
+		Tags = CoffeeCup,
+	}
+	item FAHotDrinkLatteWhite
+	{
+		DisplayCategory = Food,
+		Weight = 0.5,
+		Type = Food,
+		DisplayName = Mug of Latte,
+		CustomEatSound = DrinkingFromCan,
+		Icon = MugWhiteFull,
+		ThirstChange = -15,
+		HungerChange = -18,
+		UnhappyChange = -28,
+		FatigueChange = -50,
+		StressChange = -23,
+		ReplaceOnUse = MugWhite,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromMug,
+		GoodHot = true,
+		StaticModel = MugWhite,
+		WorldStaticModel = MugWhite,
+		Tags = CoffeeCup,
+	}
+	item FAHotDrinkLatteSpiffo
+	{
+		DisplayCategory = Food,
+		Weight = 0.5,
+		Type = Food,
+		DisplayName = Mug of Latte,
+		CustomEatSound = DrinkingFromCan,
+		Icon = MugSpiffoFull,
+		ThirstChange = -15,
+		HungerChange = -18,
+		UnhappyChange = -28,
+		FatigueChange = -50,
+		StressChange = -23,
+		ReplaceOnUse = MugSpiffo,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromMug,
+		GoodHot = true,
+		StaticModel = MugSpiffo,
+		WorldStaticModel = MugSpiffo,
+		Tags = CoffeeCup,
+	}
+
+	item FAHotDrinkCappuccinoTeacup
+	{
+		DisplayCategory = Food,
+		Weight = 0.5,
+		Type = Food,
+		DisplayName = Cup of Cappuccino,
+		CustomEatSound = DrinkingFromCan,
+		Icon = Teacup,
+		ThirstChange = -18,
+		HungerChange = -15,
+		UnhappyChange = -28,
+		FatigueChange = -50,
+		StressChange = -23,
+		ReplaceOnUse = Teacup,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromMug,
+		GoodHot = true,
+		StaticModel = Mug,
+		WorldStaticModel = Teacup_Ground,
+		Tags = CoffeeCup,
+	}
+	item FAHotDrinkCappuccinoMugl
+	{
+		DisplayCategory = Food,
+		Weight = 0.5,
+		Type = Food,
+		DisplayName = Mug of Cappuccino,
+		CustomEatSound = DrinkingFromCan,
+		Icon = MugFulll,
+		ThirstChange = -18,
+		HungerChange = -15,
+		UnhappyChange = -28,
+		FatigueChange = -50,
+		StressChange = -23,
+		ReplaceOnUse = Mugl,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromMug,
+		GoodHot = true,
+		StaticModel = Mug,
+		WorldStaticModel = Mug,
+		Tags = CoffeeCup,
+	}
+	item FAHotDrinkCappuccinoRed
+	{
+		DisplayCategory = Food,
+		Weight = 0.5,
+		Type = Food,
+		DisplayName = Mug of Cappuccino,
+		CustomEatSound = DrinkingFromCan,
+		Icon = MugRedFull,
+		ThirstChange = -18,
+		HungerChange = -15,
+		UnhappyChange = -28,
+		FatigueChange = -50,
+		StressChange = -23,
+		ReplaceOnUse = MugRed,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromMug,
+		GoodHot = true,
+		StaticModel = MugRed,
+		WorldStaticModel = MugRed,
+		Tags = CoffeeCup,
+	}
+	item FAHotDrinkCappuccinoWhite
+	{
+		DisplayCategory = Food,
+		Weight = 0.5,
+		Type = Food,
+		DisplayName = Mug of Cappuccino,
+		CustomEatSound = DrinkingFromCan,
+		Icon = MugWhiteFull,
+		ThirstChange = -18,
+		HungerChange = -15,
+		UnhappyChange = -28,
+		FatigueChange = -50,
+		StressChange = -23,
+		ReplaceOnUse = MugWhite,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromMug,
+		GoodHot = true,
+		StaticModel = MugWhite,
+		WorldStaticModel = MugWhite,
+		Tags = CoffeeCup,
+	}
+	item FAHotDrinkCappuccinoSpiffo
+	{
+		DisplayCategory = Food,
+		Weight = 0.5,
+		Type = Food,
+		DisplayName = Mug of Cappuccino,
+		CustomEatSound = DrinkingFromCan,
+		Icon = MugSpiffoFull,
+		ThirstChange = -18,
+		HungerChange = -15,
+		UnhappyChange = -28,
+		FatigueChange = -50,
+		StressChange = -23,
+		ReplaceOnUse = MugSpiffo,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromMug,
+		GoodHot = true,
+		StaticModel = MugSpiffo,
+		WorldStaticModel = MugSpiffo,
+		Tags = CoffeeCup,
+	}
+
     	item FAPaperTowel
 	{
 	    	DisplayCategory = Household,
@@ -1608,4 +2056,5 @@ module FunctionalAppliances
         	ItemWhenDry = FunctionalAppliances.FAPaperTowel,
         	WorldStaticModel = BathTowel,
 	}
+
 }
