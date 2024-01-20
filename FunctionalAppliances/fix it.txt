@@ -1,0 +1,22 @@
+Need to get tumblers to work for both beer and soda
+Correct the label of the kegs and sodas on the dispensers to make them look nicer
+add additional pay phones support and now I know how to get the sound to work for that process
+finish the coffee machines - add thermos, low ball, styrofoam cups, cappucino
+correct the depletion of kegs, syrup and co2 in multiplayer
+finish generator, pull fuel from rear tank, make it not moveable, refreshing tank from rear tank, auto start on power loss.
+paper towels and napkins use
+need a patch dedicated to recipes for everything 
+flavored popcorn, soda jerk evolved recipes, more fried foods integrating things like deep fried cookies
+check for anticheat 21 issues on all mods
+maybe napkin notes
+broken tv's and such
+white boards requested
+make hotdog and popcorn machine inventory searchable for making foods
+add trash hot dogs
+soulfilchers coffee beans
+coffee machine facing issues
+pay phones need to be in same square walking
+check possible use server side for kegs, tanks, and syrup boxes
+
+
+fixed - error with roonName with counters outside
