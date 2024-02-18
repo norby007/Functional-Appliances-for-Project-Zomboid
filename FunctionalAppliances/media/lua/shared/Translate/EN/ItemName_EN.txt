@@ -130,6 +130,4 @@ ItemName_EN = {
 
 	ItemName_FunctionalAppliances.FAPaperTowel = "Paper Towel",
 	ItemName_FunctionalAppliances.FAPaperTowelWet = "Wet Paper Towel",
-	ItemName_FunctionalAppliances.FAPaperTowel = "Paper Napkins",
-	ItemName_FunctionalAppliances.FAPaperTowelWet = "Wet Paper Napkins",
 }

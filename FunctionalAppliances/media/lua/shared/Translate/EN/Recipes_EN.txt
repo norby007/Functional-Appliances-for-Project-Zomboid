@@ -7,7 +7,7 @@ Recipes_EN = {
 	Recipe_Empty_Bucket_of_Popcorn  = "Empty Bucket of Popcorn",
 
 	Recipe_Craft_Empty_Keg  = "Craft Empty Keg",
-	Recipe_Convert_Empty_Beer_Bottle_From_MoreBrews  = "TConvert Empty Beer Bottle From MoreBrews",
+	Recipe_Convert_Empty_Beer_Bottle_From_MoreBrews  = "Convert Empty Beer Bottle From MoreBrews",
 	Recipe_Craft_Home_Brew_Keg  = "Craft Home Brew Keg",
 
 	Recipe_Craft_Empty_CO2_Tank  = "Craft Empty CO2 Tank",

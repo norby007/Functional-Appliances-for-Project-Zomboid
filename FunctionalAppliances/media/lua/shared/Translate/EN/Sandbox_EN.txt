@@ -99,10 +99,10 @@ Sandbox_EN = {
 	Sandbox_FunctionalAppliances_FACCSTheatreChance_option6 = "None",
 
 	Sandbox_FunctionalAppliances_FA24HRWallClocks = "Switch Wall Clocks to 24HR Format",
-	Sandbox_FunctionalAppliances_FA24HRWallClocks = "Enabling this will make wall clocks read 0-24 Hours instead of 0-12 Hours.",
+	Sandbox_FunctionalAppliances_FA24HRWallClocks_tooltip = "Enabling this will make wall clocks read 0-24 Hours instead of 0-12 Hours.",
 
 	Sandbox_FunctionalAppliances_FAEnableSiloGenerators = "Enable Silo Generator Spawns",
-	Sandbox_FunctionalAppliances_FAEnableSiloGenerators = "Disabling this will remove the possibility silos t be converted into generators.",
+	Sandbox_FunctionalAppliances_FAEnableSiloGenerators_tooltip = "Disabling this will remove the possibility for silos to be converted into generators.",
 
 	Sandbox_FunctionalAppliances_FAGeneratorMagazineSpawnChance = "Generator magazine spawn chance in Silo Generators",
 	Sandbox_FunctionalAppliances_FAGeneratorMagazineSpawnChance_tooltip = "How often generator magazines spawn in silo generators.",
