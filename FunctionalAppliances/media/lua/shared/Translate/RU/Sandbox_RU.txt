@@ -83,7 +83,7 @@ Sandbox_RU = {
 	Sandbox_FunctionalAppliances_FASapphsCookingFreshTheatreChance = "Шанс появления скоропортящаяся еда еды из мода «Sapph's Cooking» в кинотеатре",
 	Sandbox_FunctionalAppliances_FASapphsCookingFreshTheatreChance_tooltip = "Как часто можно найти свежие продукты из мода «Sapph's Cooking» на прилавках кинотеатра.",
 	Sandbox_FunctionalAppliances_FASapphsCookingFreshTheatreChance_option1 = "Изредка",
-	Sandbox_FunctionalAppliances_FASapphsCookingFreshTheatreChance_option2 = "Редко,
+	Sandbox_FunctionalAppliances_FASapphsCookingFreshTheatreChance_option2 = "Редко",
 	Sandbox_FunctionalAppliances_FASapphsCookingFreshTheatreChance_option3 = "Нормально",
 	Sandbox_FunctionalAppliances_FASapphsCookingFreshTheatreChance_option4 = "Частно",
 	Sandbox_FunctionalAppliances_FASapphsCookingFreshTheatreChance_option5 = "Очень часто",
@@ -96,6 +96,48 @@ Sandbox_RU = {
 	Sandbox_FunctionalAppliances_FACCSTheatreChance_option3 = "Нормально",
 	Sandbox_FunctionalAppliances_FACCSTheatreChance_option4 = "Часто",
 	Sandbox_FunctionalAppliances_FACCSTheatreChance_option5 = "Очень часто",
-	Sandbox_FunctionalAppliances_FACCSTheatreChance_option6 = "Никогда"
+	Sandbox_FunctionalAppliances_FACCSTheatreChance_option6 = "Никогда",
+
+	Sandbox_FunctionalAppliances_FA24HRWallClocks = "Включение этого параметра приведет к тому, что настенные часы будут показывать 0–24 часа вместо 0–12 часов.",
+	Sandbox_FunctionalAppliances_FA24HRWallClocks = "Включение этого параметра приведет к тому, что настенные часы будут показывать 0–24 часа вместо 0–12 часов.",
+
+	Sandbox_FunctionalAppliances_FAEnableSiloGenerators = "Отключение этого параметра устранит возможность преобразования бункеров в генераторы.",
+	Sandbox_FunctionalAppliances_FAEnableSiloGenerators = "Отключение этого параметра устранит возможность преобразования бункеров в генераторы.",
+
+	Sandbox_FunctionalAppliances_FAGeneratorMagazineSpawnChance = "Шанс появления журнала генератора в Silo Generators",
+	Sandbox_FunctionalAppliances_FAGeneratorMagazineSpawnChance_tooltip = "Как часто магазины генераторов появляются в генераторах шахт.",
+	Sandbox_FunctionalAppliances_FAGeneratorMagazineSpawnChance_option1 = "Невероятно редкий",
+	Sandbox_FunctionalAppliances_FAGeneratorMagazineSpawnChance_option2 = "Редкий",
+	Sandbox_FunctionalAppliances_FAGeneratorMagazineSpawnChance_option3 = "Нормальный",
+	Sandbox_FunctionalAppliances_FAGeneratorMagazineSpawnChance_option4 = "Общий",
+	Sandbox_FunctionalAppliances_FAGeneratorMagazineSpawnChance_option5 = "Обильный",
+	Sandbox_FunctionalAppliances_FAGeneratorMagazineSpawnChance_option6 = "Никто",
+
+	Sandbox_FunctionalAppliances_FAAutoPowerOnChance = "Настройка автоматического включения силосного генератора по умолчанию",
+	Sandbox_FunctionalAppliances_FAAutoPowerOnChance_tooltip = "Вероятность того, что силосный генератор будет настроен на автоматическое включение по умолчанию.",
+	Sandbox_FunctionalAppliances_FAAutoPowerOnChance_option1 = "Невероятно редкий",
+	Sandbox_FunctionalAppliances_FAAutoPowerOnChance_option2 = "Редкий",
+	Sandbox_FunctionalAppliances_FAAutoPowerOnChance_option3 = "Нормальный",
+	Sandbox_FunctionalAppliances_FAAutoPowerOnChance_option4 = "Общий",
+	Sandbox_FunctionalAppliances_FAAutoPowerOnChance_option5 = "Всегда",
+	Sandbox_FunctionalAppliances_FAAutoPowerOnChance_option6 = "Никогда",
+
+	Sandbox_FunctionalAppliances_FAFuelTankFilledAmount = "Появляются топливные баки генератора силоса.",
+	Sandbox_FunctionalAppliances_FAFuelTankFilledAmount_tooltip = "Уровень топлива с которым появляются генераторы.",
+	Sandbox_FunctionalAppliances_FAFuelTankFilledAmount_option1 = "Низкий",
+	Sandbox_FunctionalAppliances_FAFuelTankFilledAmount_option2 = "Средний",
+	Sandbox_FunctionalAppliances_FAFuelTankFilledAmount_option3 = "Высокий",
+	Sandbox_FunctionalAppliances_FAFuelTankFilledAmount_option4 = "Полный",
+	Sandbox_FunctionalAppliances_FAFuelTankFilledAmount_option5 = "Совершенно случайный",
+	Sandbox_FunctionalAppliances_FAFuelTankFilledAmount_option6 = "Нулевой",
+
+	Sandbox_FunctionalAppliances_FAConditionAmount = "Силосные генераторы появляются с условием",
+	Sandbox_FunctionalAppliances_FAConditionAmount_tooltip = "Уровень состояния с которым появляются генераторы.",
+	Sandbox_FunctionalAppliances_FAConditionAmount_option1 = "Низкий",
+	Sandbox_FunctionalAppliances_FAConditionAmount_option2 = "Средний",
+	Sandbox_FunctionalAppliances_FAConditionAmount_option3 = "Высокий",
+	Sandbox_FunctionalAppliances_FAConditionAmount_option4 = "Полный",
+	Sandbox_FunctionalAppliances_FAConditionAmount_option5 = "Совершенно случайный",
+	Sandbox_FunctionalAppliances_FAConditionAmount_option6 = "Нулевой",
 
 }

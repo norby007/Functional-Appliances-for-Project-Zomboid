@@ -129,6 +129,7 @@ ItemName_RU = {
 	ItemName_FunctionalAppliances.FAHotDrinkCappuccinoSpiffo = "Кружка капучино",
 
 	ItemName_FunctionalAppliances.FAPaperTowel = "Бумажные салфетки",
-	ItemName_FunctionalAppliances.FAPaperTowelWet = "Влажные бумажные салфетки"
-
+	ItemName_FunctionalAppliances.FAPaperTowelWet = "Влажные бумажные салфетки",
+	ItemName_FunctionalAppliances.FAPaperTowel = "Бумажные салфетки",
+	ItemName_FunctionalAppliances.FAPaperTowelWet = "Влажные бумажные салфетки",
 }
