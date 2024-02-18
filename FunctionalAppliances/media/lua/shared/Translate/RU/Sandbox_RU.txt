@@ -98,11 +98,11 @@ Sandbox_RU = {
 	Sandbox_FunctionalAppliances_FACCSTheatreChance_option5 = "Очень часто",
 	Sandbox_FunctionalAppliances_FACCSTheatreChance_option6 = "Никогда",
 
-	Sandbox_FunctionalAppliances_FA24HRWallClocks = "Включение этого параметра приведет к тому, что настенные часы будут показывать 0–24 часа вместо 0–12 часов.",
-	Sandbox_FunctionalAppliances_FA24HRWallClocks = "Включение этого параметра приведет к тому, что настенные часы будут показывать 0–24 часа вместо 0–12 часов.",
+	Sandbox_FunctionalAppliances_FA24HRWallClocks = "24-чисовой формат настенных часов",
+	Sandbox_FunctionalAppliances_FA24HRWallClocks_tooltip = "Включение этого параметра приведет к тому, что настенные часы будут показывать 0–24 часа вместо 0–12 часов.",
 
-	Sandbox_FunctionalAppliances_FAEnableSiloGenerators = "Отключение этого параметра устранит возможность преобразования бункеров в генераторы.",
-	Sandbox_FunctionalAppliances_FAEnableSiloGenerators = "Отключение этого параметра устранит возможность преобразования бункеров в генераторы.",
+	Sandbox_FunctionalAppliances_FAEnableSiloGenerators = "Активировать сило-генераторы",
+	Sandbox_FunctionalAppliances_FAEnableSiloGenerators_tooltip = "Отключение этого параметра устранит возможность преобразования бункеров в генераторы.",
 
 	Sandbox_FunctionalAppliances_FAGeneratorMagazineSpawnChance = "Шанс появления журнала генератора в Silo Generators",
 	Sandbox_FunctionalAppliances_FAGeneratorMagazineSpawnChance_tooltip = "Как часто магазины генераторов появляются в генераторах шахт.",
